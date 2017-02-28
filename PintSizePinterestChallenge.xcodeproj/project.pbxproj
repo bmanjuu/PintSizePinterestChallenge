@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525B49F77FA996AECE3A645D /* Pods_PintSizePinterestChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD41978EF476B125C6803D7 /* Pods_PintSizePinterestChallenge.framework */; };
 		A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D581E65DD520012B0D9 /* AppDelegate.swift */; };
 		A4666D5B1E65DD520012B0D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D5A1E65DD520012B0D9 /* ViewController.swift */; };
 		A4666D5E1E65DD520012B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4666D5C1E65DD520012B0D9 /* Main.storyboard */; };
 		A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */; };
 		A4666D631E65DD520012B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4666D621E65DD520012B0D9 /* Assets.xcassets */; };
 		A4666D661E65DD520012B0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */; };
+		A4666D6E1E65DDF60012B0D9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D6D1E65DDF60012B0D9 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3179ED28CEBE313F3E5F3BFD /* Pods-PintSizePinterestChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		6CD41978EF476B125C6803D7 /* Pods_PintSizePinterestChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PintSizePinterestChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4666D551E65DD520012B0D9 /* PintSizePinterestChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PintSizePinterestChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4666D581E65DD520012B0D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4666D5A1E65DD520012B0D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		A4666D621E65DD520012B0D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4666D651E65DD520012B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4666D671E65DD530012B0D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4666D6D1E65DDF60012B0D9 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525B49F77FA996AECE3A645D /* Pods_PintSizePinterestChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F23AA2A19E7920D0CB8A8E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CD41978EF476B125C6803D7 /* Pods_PintSizePinterestChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A4666D4C1E65DD500012B0D9 = {
 			isa = PBXGroup;
 			children = (
 				A4666D571E65DD520012B0D9 /* PintSizePinterestChallenge */,
 				A4666D561E65DD520012B0D9 /* Products */,
+				A6E666A3701530DF79B7613D /* Pods */,
+				5F23AA2A19E7920D0CB8A8E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +80,18 @@
 				A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */,
 				A4666D671E65DD530012B0D9 /* Info.plist */,
 				A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */,
+				A4666D6D1E65DDF60012B0D9 /* Secrets.swift */,
 			);
 			path = PintSizePinterestChallenge;
+			sourceTree = "<group>";
+		};
+		A6E666A3701530DF79B7613D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */,
+				3179ED28CEBE313F3E5F3BFD /* Pods-PintSizePinterestChallenge.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4666D6A1E65DD530012B0D9 /* Build configuration list for PBXNativeTarget "PintSizePinterestChallenge" */;
 			buildPhases = (
+				8E2F538AA71226A13475A72F /* [CP] Check Pods Manifest.lock */,
 				A4666D511E65DD500012B0D9 /* Sources */,
 				A4666D521E65DD500012B0D9 /* Frameworks */,
 				A4666D531E65DD500012B0D9 /* Resources */,
+				9CBF0D551A45F67EC7873DBF /* [CP] Embed Pods Frameworks */,
+				5BB265375AC9AF092AA5EE18 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,12 +165,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BB265375AC9AF092AA5EE18 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E2F538AA71226A13475A72F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CBF0D551A45F67EC7873DBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4666D511E65DD500012B0D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A4666D5B1E65DD520012B0D9 /* ViewController.swift in Sources */,
+				A4666D6E1E65DDF60012B0D9 /* Secrets.swift in Sources */,
 				A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */,
 				A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */,
 			);
@@ -261,6 +340,7 @@
 		};
 		A4666D6B1E65DD530012B0D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4E8JHBC5T7;
@@ -274,6 +354,7 @@
 		};
 		A4666D6C1E65DD530012B0D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3179ED28CEBE313F3E5F3BFD /* Pods-PintSizePinterestChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4E8JHBC5T7;
@@ -304,6 +385,7 @@
 				A4666D6C1E65DD530012B0D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
