@@ -14,6 +14,7 @@
 		A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */; };
 		A4666D631E65DD520012B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4666D621E65DD520012B0D9 /* Assets.xcassets */; };
 		A4666D661E65DD520012B0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */; };
+		A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D6F1E65E0300012B0D9 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A4666D621E65DD520012B0D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4666D651E65DD520012B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4666D671E65DD530012B0D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4666D6F1E65E0300012B0D9 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */,
 				A4666D671E65DD530012B0D9 /* Info.plist */,
 				A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */,
+				A4666D6F1E65E0300012B0D9 /* Secrets.swift */,
 			);
 			path = PintSizePinterestChallenge;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4666D5B1E65DD520012B0D9 /* ViewController.swift in Sources */,
+				A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */,
 				A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */,
 				A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */,
 			);
