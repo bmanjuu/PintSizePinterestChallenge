@@ -10,6 +10,8 @@ import Foundation
 
 struct PinterestAPIClient {
     
+    static let baseURL = ""
+    
     static func obtainUserURL() -> String {
         var userURL = ""
         

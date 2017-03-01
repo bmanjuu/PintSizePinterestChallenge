@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import PinterestSDK
 
-class Board {
+class Board /*: PDKBoard*/ {
     let id: String
     let url: String
     let creator: User

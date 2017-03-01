@@ -17,10 +17,10 @@ class User {
     var firstName: String
     var lastName: String
     
-    var boards: [Board]
+    var boards: [PDKBoard]
     
     
-    init(id: String, url: String, username: String, firstName: String, lastName: String, boards: [Board]) {
+    init(id: String, url: String, username: String, firstName: String, lastName: String, boards: [PDKBoard]) {
         self.id = id
         self.url = url
         self.username = username
@@ -30,7 +30,7 @@ class User {
     }
     
     convenience init() {
-        self.init(id: "", url: "", username: "", firstName: "", lastName: "", boards: [Board]())
+        self.init(id: "", url: "", username: "", firstName: "", lastName: "", boards: [PDKBoard]())
     }
 }
 
@@ -50,7 +50,8 @@ extension User {
             self.username = successResponseObject.user().username
             self.firstName = successResponseObject.user().firstName
             self.lastName = successResponseObject.user().lastName
-            // self.boards = successResponseObject.boards() as! [Board]
+            
+            self.getUserBoards()
             
             print("******** USER INFO ********")
             print("id: \(self.id)")
@@ -58,15 +59,30 @@ extension User {
             print("username: \(self.username)")
             print("name: \(self.firstName) \(self.lastName)")
             print("board count: \(self.boards.count)")
-            //print("boards: \(self.boards)")
-            /* for board in self.boards {
-                print(board)
-            } */
             print("***************************")
             
             //should get User and Board information here 
         }) { (error: Error?) in
             print("ERROR: \(error?.localizedDescription)")
         }
+    }
+    
+    func getUserBoards() {
+        PDKClient.sharedInstance().getAuthenticatedUserBoards(withFields: Set(arrayLiteral: "id", "name", "url", "description", "image"), success: { (success) in
+            print("SUCESS WITH BOARDS!!! :D")
+            print("board count: \(success?.boards().count)")
+            let boards = success?.boards() as! [PDKBoard]
+            for board in boards {
+                print(board.name)
+            }
+            
+            print("set up board information to be displayed here")
+        }) { (error: Error?) in
+            print("ERROR: \(error?.localizedDescription)")
+        }
+    }
+    
+    func getBoardPins(boardId: String) {
+        // PDKClient.sharedInstance().getBoardPins(boardId, fields: <#T##Set<AnyHashable>!#>, withSuccess: <#T##PDKClientSuccess!##PDKClientSuccess!##(PDKResponseObject?) -> Void#>, andFailure: <#T##PDKClientFailure!##PDKClientFailure!##(Error?) -> Void#>)
     }
 }
