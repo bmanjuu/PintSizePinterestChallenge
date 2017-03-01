@@ -15,12 +15,12 @@ class UserAuthenticationVC: UIViewController {
 
     @IBAction func loginButtonTapped(_ sender: Any) {
         //authenticate user here
-        user.authenticateUser(in: self) //fill in user info through authentication
+         //fill in user info through authentication
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        user.authenticateUser(in: self)
         // Do any additional setup after loading the view.
     }
 
@@ -36,8 +36,8 @@ class UserAuthenticationVC: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        //USER OBJECT GETS FILLED IN HERE AND PASSED INTO VC Str
+        let destinationVC = segue.destination as? UserBoardsCollectionVC
+        destinationVC?.user = self.user
     }
     
 

@@ -53,15 +53,6 @@ extension User {
             
             self.getUserBoards()
             
-            print("******** USER INFO ********")
-            print("id: \(self.id)")
-            print("url: \(self.url)")
-            print("username: \(self.username)")
-            print("name: \(self.firstName) \(self.lastName)")
-            print("board count: \(self.boards.count)")
-            print("***************************")
-            
-            //should get User and Board information here 
         }) { (error: Error?) in
             print("ERROR: \(error?.localizedDescription)")
         }
@@ -69,14 +60,24 @@ extension User {
     
     func getUserBoards() {
         PDKClient.sharedInstance().getAuthenticatedUserBoards(withFields: Set(arrayLiteral: "id", "name", "url", "description", "image"), success: { (success) in
-            print("SUCESS WITH BOARDS!!! :D")
-            print("board count: \(success?.boards().count)")
-            let boards = success?.boards() as! [PDKBoard]
-            for board in boards {
+            
+            print("SUCCESS WITH BOARDS!!! :D")
+            print("board count: \(success!.boards().count)")
+            let responseBoards = success?.boards() as! [PDKBoard]
+            for board in responseBoards {
                 print(board.name)
             }
             
-            print("set up board information to be displayed here")
+            self.boards = responseBoards
+            
+            print("\n******** USER INFO ********\n")
+            print("id: \(self.id)")
+            print("url: \(self.url)")
+            print("username: \(self.username)")
+            print("name: \(self.firstName) \(self.lastName)")
+            print("board count: \(self.boards.count)")
+            print("\n***************************\n")
+
         }) { (error: Error?) in
             print("ERROR: \(error?.localizedDescription)")
         }
