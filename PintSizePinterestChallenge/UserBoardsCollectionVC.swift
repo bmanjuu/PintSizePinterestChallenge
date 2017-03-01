@@ -9,7 +9,7 @@
 import UIKit
 
 private let reuseIdentifier = "board"
-fileprivate let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
+fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 30.0, bottom: 20.0, right: 30.0)
 fileprivate let itemsPerRow: CGFloat = 2
 
 class UserBoardsCollectionVC: UICollectionViewController {
@@ -66,6 +66,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
         let boardImage = BoardCollectionViewCell.obtainImagefrom(link: board.largestImage().url)
         
         cell.boardImageView.image = boardImage
+        cell.boardNameLabel.text = board.name
         
         return cell
     }

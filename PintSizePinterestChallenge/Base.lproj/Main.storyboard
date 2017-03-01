@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,32 +68,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P4I-d9-uCL">
-                            <size key="itemSize" width="200" height="200"/>
+                            <size key="itemSize" width="150" height="257"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="board" id="BXr-0g-206" customClass="BoardCollectionViewCell" customModule="PintSizePinterestChallenge" customModuleProvider="target">
-                                <rect key="frame" x="88" y="0.0" width="200" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="257"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CGv-3c-XQh">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x2Q-QH-17a">
+                                            <rect key="frame" x="53" y="216" width="44.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="CGv-3c-XQh" firstAttribute="leading" secondItem="BXr-0g-206" secondAttribute="leading" id="49f-gN-w2o"/>
-                                    <constraint firstAttribute="bottom" secondItem="CGv-3c-XQh" secondAttribute="bottom" id="Ego-g6-R7P"/>
-                                    <constraint firstItem="CGv-3c-XQh" firstAttribute="top" secondItem="BXr-0g-206" secondAttribute="top" id="Pnz-z8-gF2"/>
-                                    <constraint firstAttribute="trailing" secondItem="CGv-3c-XQh" secondAttribute="trailing" id="sI1-Sh-Fvw"/>
+                                    <constraint firstItem="CGv-3c-XQh" firstAttribute="centerX" secondItem="BXr-0g-206" secondAttribute="centerX" id="8OW-pB-1OU"/>
+                                    <constraint firstItem="x2Q-QH-17a" firstAttribute="centerX" secondItem="BXr-0g-206" secondAttribute="centerX" id="BZf-Wk-41g"/>
+                                    <constraint firstItem="CGv-3c-XQh" firstAttribute="width" secondItem="BXr-0g-206" secondAttribute="width" id="ega-Me-Pfh"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="x2Q-QH-17a" secondAttribute="bottom" constant="12" id="gab-0F-kyY"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="CGv-3c-XQh" secondAttribute="bottom" constant="49" id="gef-60-qqg"/>
+                                    <constraint firstItem="CGv-3c-XQh" firstAttribute="top" secondItem="BXr-0g-206" secondAttribute="topMargin" constant="-8" id="t2v-ce-lOd"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="boardImageView" destination="CGv-3c-XQh" id="lHY-sp-Jyl"/>
+                                    <outlet property="boardNameLabel" destination="x2Q-QH-17a" id="xAS-zB-FZQ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

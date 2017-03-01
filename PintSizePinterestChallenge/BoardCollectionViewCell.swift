@@ -12,6 +12,7 @@ import Foundation
 class BoardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var boardImageView: UIImageView!
+    @IBOutlet weak var boardNameLabel: UILabel!
     
     static func downloadDataFromImageURL(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
