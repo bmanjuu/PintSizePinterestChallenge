@@ -13,14 +13,18 @@ class UserAuthenticationVC: UIViewController {
     
     var user: User = User() //create empty/new user
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var enterButton: UIButton!
     @IBAction func loginButtonTapped(_ sender: Any) {
-        //authenticate user here
-         //fill in user info through authentication
+        //authenticate user here and fill in user info through authentication process 
+        user.authenticateUser(in: self)
+        self.loginButton.isHidden = true
+        self.enterButton.isHidden = false // this should animate in :)
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        user.authenticateUser(in: self)
+        self.enterButton.isHidden = true
         // Do any additional setup after loading the view.
     }
 

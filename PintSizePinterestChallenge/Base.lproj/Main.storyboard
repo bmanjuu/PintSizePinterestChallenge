@@ -31,12 +31,28 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="w8G-eC-Vyb" eventType="touchUpInside" id="0El-Gz-FZa"/>
-                                    <segue destination="apR-1e-6dq" kind="show" identifier="showBoards" id="sLy-gR-rIb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-lx-eVw">
+                                <rect key="frame" x="148" y="384" width="78" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.88924870469999995" green="0.2623006443" blue="0.1172467054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="w8G-eC-Vyb" eventType="touchUpInside" id="B2g-4V-vt7"/>
+                                    <segue destination="apR-1e-6dq" kind="show" identifier="showBoards" id="QGs-bu-pxP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="enterButton" destination="YCz-lx-eVw" id="IbG-9v-cM1"/>
+                        <outlet property="loginButton" destination="H9K-J5-3Kq" id="sqs-bf-51S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCa-9a-rBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
