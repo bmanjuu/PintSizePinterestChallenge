@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import PinterestSDK
 
 struct PinterestAPIClient {
     
-    static let baseURL = ""
+    static let baseURL = "https://api.pinterest.com/v1/"
     
     static func obtainUserURL() -> String {
         var userURL = ""
         
         return userURL
     }
+    
 }

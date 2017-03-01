@@ -34,6 +34,7 @@ class User {
     }
 }
 
+//MARK: - Authentication
 extension User {
     func authenticateUser(in VC: UIViewController) {
         print("called authenticate user function")
@@ -57,7 +58,11 @@ extension User {
             print("ERROR: \(error?.localizedDescription)")
         }
     }
-    
+}
+
+//MARK: - Obtain User's Board Information
+extension User {
+
     func getUserBoards() {
         PDKClient.sharedInstance().getAuthenticatedUserBoards(withFields: Set(arrayLiteral: "id", "name", "url", "description", "image"), success: { (success) in
             
@@ -66,10 +71,10 @@ extension User {
             let responseBoards = success?.boards() as! [PDKBoard]
             for board in responseBoards {
                 print(board.name)
-                if board.image == nil {
+                if board.largestImage().url == nil {
                     print("nil image")
                 } else {
-                    print(board.image)
+                    print(board.largestImage().url)
                 }
             }
             

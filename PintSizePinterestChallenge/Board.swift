@@ -13,6 +13,7 @@ class Board /*: PDKBoard*/ {
     let id: String
     let url: String
     let creator: User
+    // let image: PDKImageInfo
     
     var name: String
     var description: String
