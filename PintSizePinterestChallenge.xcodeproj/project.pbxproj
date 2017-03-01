@@ -15,6 +15,8 @@
 		A4666D631E65DD520012B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4666D621E65DD520012B0D9 /* Assets.xcassets */; };
 		A4666D661E65DD520012B0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */; };
 		A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D6F1E65E0300012B0D9 /* Secrets.swift */; };
+		A4D9BA0D1E67067500AB7EB4 /* UserAuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA0C1E67067500AB7EB4 /* UserAuthenticationVC.swift */; };
+		A4D9BA131E67082A00AB7EB4 /* UserBoardsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA121E67082A00AB7EB4 /* UserBoardsCollectionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A4666D651E65DD520012B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4666D671E65DD530012B0D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4666D6F1E65E0300012B0D9 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A4D9BA0C1E67067500AB7EB4 /* UserAuthenticationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthenticationVC.swift; sourceTree = "<group>"; };
+		A4D9BA121E67082A00AB7EB4 /* UserBoardsCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBoardsCollectionVC.swift; sourceTree = "<group>"; };
 		FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,16 +77,50 @@
 		A4666D571E65DD520012B0D9 /* PintSizePinterestChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				A4666D581E65DD520012B0D9 /* AppDelegate.swift */,
-				A4666D5A1E65DD520012B0D9 /* ViewController.swift */,
-				A4666D5C1E65DD520012B0D9 /* Main.storyboard */,
-				A4666D621E65DD520012B0D9 /* Assets.xcassets */,
-				A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */,
-				A4666D671E65DD530012B0D9 /* Info.plist */,
-				A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */,
-				A4666D6F1E65E0300012B0D9 /* Secrets.swift */,
+				A4D9BA0E1E6706D100AB7EB4 /* Model */,
+				A4D9BA0F1E6706DD00AB7EB4 /* View */,
+				A4D9BA101E6706E800AB7EB4 /* Controller */,
+				A4D9BA111E6706FA00AB7EB4 /* Other */,
 			);
 			path = PintSizePinterestChallenge;
+			sourceTree = "<group>";
+		};
+		A4D9BA0E1E6706D100AB7EB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A4666D581E65DD520012B0D9 /* AppDelegate.swift */,
+				A4666D6F1E65E0300012B0D9 /* Secrets.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A4D9BA0F1E6706DD00AB7EB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */,
+				A4666D5C1E65DD520012B0D9 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A4D9BA101E6706E800AB7EB4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4666D5A1E65DD520012B0D9 /* ViewController.swift */,
+				A4D9BA0C1E67067500AB7EB4 /* UserAuthenticationVC.swift */,
+				A4D9BA121E67082A00AB7EB4 /* UserBoardsCollectionVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A4D9BA111E6706FA00AB7EB4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A4666D621E65DD520012B0D9 /* Assets.xcassets */,
+				A4666D671E65DD530012B0D9 /* Info.plist */,
+				A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		A6E666A3701530DF79B7613D /* Pods */ = {
@@ -218,6 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D9BA131E67082A00AB7EB4 /* UserBoardsCollectionVC.swift in Sources */,
+				A4D9BA0D1E67067500AB7EB4 /* UserAuthenticationVC.swift in Sources */,
 				A4666D5B1E65DD520012B0D9 /* ViewController.swift in Sources */,
 				A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */,
 				A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */,

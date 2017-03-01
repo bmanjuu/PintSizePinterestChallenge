@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         PDKClient.configureSharedInstance(withAppId: Secrets.appId)
+        
         return true
     }
 
