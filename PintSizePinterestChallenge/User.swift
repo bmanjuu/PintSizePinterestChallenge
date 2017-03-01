@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PinterestSDK
 
 class User {
     let id: String
@@ -28,13 +29,20 @@ class User {
         self.boards = boards
     }
     
-    init() {
+    convenience init() {
         self.init(id: "", url: "", username: "", firstName: "", lastName: "", boards: [Board]())
     }
 }
 
 extension User {
-    func authenticateUser() {
+    func authenticateUser(in VC: UIViewController) {
+        print("called authenticate user function")
         
+        PDKClient.sharedInstance().authenticate(withPermissions: [PDKClientReadPublicPermissions, PDKClientWritePublicPermissions, PDKClientReadRelationshipsPermissions, PDKClientWriteRelationshipsPermissions], from: VC, withSuccess: { (successResponseObject) -> Void in
+            
+            //should redirect back to the app here
+        }) { (error: Error?) in
+            print("ERROR: \(error?.localizedDescription)")
+        }
     }
 }

@@ -49,7 +49,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="w8G-eC-Vyb" eventType="touchUpInside" id="0El-Gz-FZa"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="VTU-OD-ezN"/>
                                 </connections>
                             </button>
                         </subviews>

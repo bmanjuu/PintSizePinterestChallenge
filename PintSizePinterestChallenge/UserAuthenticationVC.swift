@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import PinterestSDK
+import PinterestSDK
 
 class UserAuthenticationVC: UIViewController {
     
@@ -15,7 +15,7 @@ class UserAuthenticationVC: UIViewController {
 
     @IBAction func loginButtonTapped(_ sender: Any) {
         //authenticate user here
-        user!.authenticateUser() //fill in user info through authentication
+        user.authenticateUser(in: self) //fill in user info through authentication
     }
    
     override func viewDidLoad() {
