@@ -10,9 +10,12 @@ import UIKit
 //import PinterestSDK
 
 class UserAuthenticationVC: UIViewController {
+    
+    var user: User = User() //create empty/new user
 
     @IBAction func loginButtonTapped(_ sender: Any) {
         //authenticate user here
+        user!.authenticateUser() //fill in user info through authentication
     }
    
     override func viewDidLoad() {

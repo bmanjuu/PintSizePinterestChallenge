@@ -11,10 +11,20 @@ import UIKit
 
 class Pin {
     let id: String
-    let url: String
-    let creater: User
+    let url: String //The URL of the Pin on Pinterest. different from link, which is the URL of the webpage where the Pin was created.
+    let creator: User
     let image: (url: String, size: CGRect)
+    var note: String //this is the pin description
     
     var board: Board
-    var note: String
+    
+    
+    init(id: String, url: String, creator: User, image: (url: String, size: CGRect), note: String, board: Board) {
+        self.id = id
+        self.url = url
+        self.creator = creator
+        self.image = image
+        self.note = note
+        self.board = board
+    }
 }

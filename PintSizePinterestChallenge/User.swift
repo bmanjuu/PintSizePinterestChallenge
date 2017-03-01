@@ -17,4 +17,24 @@ class User {
     var lastName: String
     
     var boards: [Board]
+    
+    
+    init(id: String, url: String, username: String, firstName: String, lastName: String, boards: [Board]) {
+        self.id = id
+        self.url = url
+        self.username = username
+        self.firstName = firstName
+        self.lastName = lastName
+        self.boards = boards
+    }
+    
+    init() {
+        self.init(id: "", url: "", username: "", firstName: "", lastName: "", boards: [Board]())
+    }
+}
+
+extension User {
+    func authenticateUser() {
+        
+    }
 }
