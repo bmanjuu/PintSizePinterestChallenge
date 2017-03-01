@@ -19,7 +19,7 @@ class UserAuthenticationVC: UIViewController {
         //authenticate user here and fill in user info through authentication process 
         user.authenticateUser(in: self)
         self.loginButton.isHidden = true
-        self.enterButton.isHidden = false // this should animate in :)
+        self.enterButton.isHidden = false // this should animate in :) should be complete after all the info is complete, or else risk not having all information loaded in next VC 
     }
    
     override func viewDidLoad() {
