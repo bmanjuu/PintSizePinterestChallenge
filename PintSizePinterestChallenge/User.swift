@@ -66,6 +66,11 @@ extension User {
             let responseBoards = success?.boards() as! [PDKBoard]
             for board in responseBoards {
                 print(board.name)
+                if board.image == nil {
+                    print("nil image")
+                } else {
+                    print(board.image)
+                }
             }
             
             self.boards = responseBoards
