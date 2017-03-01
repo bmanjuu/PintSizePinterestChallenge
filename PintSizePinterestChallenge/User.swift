@@ -10,8 +10,8 @@ import Foundation
 import PinterestSDK
 
 class User {
-    let id: String
-    let url: String //obtained by calling API 
+    var id: String
+    var url: String //obtained by calling API
     
     var username: String
     var firstName: String
@@ -40,12 +40,31 @@ extension User {
         
         let permissions = [PDKClientReadPublicPermissions, PDKClientWritePublicPermissions, PDKClientReadRelationshipsPermissions, PDKClientWriteRelationshipsPermissions]
         
-        
-        
         PDKClient.sharedInstance().authenticate(withPermissions: permissions, from: VC, withSuccess: { (successResponseObject) -> Void in
             
-            VC.performSegue(withIdentifier: "showBoards", sender: nil)
-            //should redirect back to the app here
+            guard let successResponseObject = successResponseObject else { return }
+            
+            print("SUCCESS!!!")
+            self.id = successResponseObject.user().identifier
+            self.url = PinterestAPIClient.obtainUserURL()
+            self.username = successResponseObject.user().username
+            self.firstName = successResponseObject.user().firstName
+            self.lastName = successResponseObject.user().lastName
+            // self.boards = successResponseObject.boards() as! [Board]
+            
+            print("******** USER INFO ********")
+            print("id: \(self.id)")
+            print("url: \(self.url)")
+            print("username: \(self.username)")
+            print("name: \(self.firstName) \(self.lastName)")
+            print("board count: \(self.boards.count)")
+            //print("boards: \(self.boards)")
+            /* for board in self.boards {
+                print(board)
+            } */
+            print("***************************")
+            
+            //should get User and Board information here 
         }) { (error: Error?) in
             print("ERROR: \(error?.localizedDescription)")
         }
