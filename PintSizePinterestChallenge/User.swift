@@ -38,8 +38,13 @@ extension User {
     func authenticateUser(in VC: UIViewController) {
         print("called authenticate user function")
         
-        PDKClient.sharedInstance().authenticate(withPermissions: [PDKClientReadPublicPermissions, PDKClientWritePublicPermissions, PDKClientReadRelationshipsPermissions, PDKClientWriteRelationshipsPermissions], from: VC, withSuccess: { (successResponseObject) -> Void in
+        let permissions = [PDKClientReadPublicPermissions, PDKClientWritePublicPermissions, PDKClientReadRelationshipsPermissions, PDKClientWriteRelationshipsPermissions]
+        
+        
+        
+        PDKClient.sharedInstance().authenticate(withPermissions: permissions, from: VC, withSuccess: { (successResponseObject) -> Void in
             
+            VC.performSegue(withIdentifier: "showBoards", sender: nil)
             //should redirect back to the app here
         }) { (error: Error?) in
             print("ERROR: \(error?.localizedDescription)")
