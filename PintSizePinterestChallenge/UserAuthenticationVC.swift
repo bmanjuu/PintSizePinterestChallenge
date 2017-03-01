@@ -34,7 +34,7 @@ class UserAuthenticationVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        //USER OBJECT GETS FILLED IN HERE AND PASSED INTO VC 
+        //USER OBJECT GETS FILLED IN HERE AND PASSED INTO VC Str
     }
     
 

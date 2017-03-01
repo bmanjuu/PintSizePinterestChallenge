@@ -17,6 +17,9 @@
 		A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D6F1E65E0300012B0D9 /* Secrets.swift */; };
 		A4D9BA0D1E67067500AB7EB4 /* UserAuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA0C1E67067500AB7EB4 /* UserAuthenticationVC.swift */; };
 		A4D9BA131E67082A00AB7EB4 /* UserBoardsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA121E67082A00AB7EB4 /* UserBoardsCollectionVC.swift */; };
+		A4D9BA151E67088100AB7EB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA141E67088100AB7EB4 /* User.swift */; };
+		A4D9BA171E67097700AB7EB4 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA161E67097700AB7EB4 /* Board.swift */; };
+		A4D9BA191E670A5900AB7EB4 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA181E670A5900AB7EB4 /* Pin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		A4666D6F1E65E0300012B0D9 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A4D9BA0C1E67067500AB7EB4 /* UserAuthenticationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthenticationVC.swift; sourceTree = "<group>"; };
 		A4D9BA121E67082A00AB7EB4 /* UserBoardsCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBoardsCollectionVC.swift; sourceTree = "<group>"; };
+		A4D9BA141E67088100AB7EB4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A4D9BA161E67097700AB7EB4 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		A4D9BA181E670A5900AB7EB4 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +96,9 @@
 			children = (
 				A4666D581E65DD520012B0D9 /* AppDelegate.swift */,
 				A4666D6F1E65E0300012B0D9 /* Secrets.swift */,
+				A4D9BA141E67088100AB7EB4 /* User.swift */,
+				A4D9BA161E67097700AB7EB4 /* Board.swift */,
+				A4D9BA181E670A5900AB7EB4 /* Pin.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -259,9 +268,12 @@
 				A4D9BA131E67082A00AB7EB4 /* UserBoardsCollectionVC.swift in Sources */,
 				A4D9BA0D1E67067500AB7EB4 /* UserAuthenticationVC.swift in Sources */,
 				A4666D5B1E65DD520012B0D9 /* ViewController.swift in Sources */,
+				A4D9BA191E670A5900AB7EB4 /* Pin.swift in Sources */,
 				A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */,
 				A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */,
 				A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */,
+				A4D9BA171E67097700AB7EB4 /* Board.swift in Sources */,
+				A4D9BA151E67088100AB7EB4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
