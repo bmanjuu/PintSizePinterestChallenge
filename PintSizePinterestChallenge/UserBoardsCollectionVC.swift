@@ -9,6 +9,8 @@
 import UIKit
 
 private let reuseIdentifier = "board"
+fileprivate let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
+fileprivate let itemsPerRow: CGFloat = 2
 
 class UserBoardsCollectionVC: UICollectionViewController {
     
