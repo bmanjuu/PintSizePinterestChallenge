@@ -16,6 +16,7 @@ fileprivate let itemsPerRow: CGFloat = 2
 class UserBoardsCollectionVC: UICollectionViewController {
     
     var user: User!
+    let store = PinterestUserDataStore.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return user.boardsAndPins.keys.count
+        return store.userBoardsAndPins.keys.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -53,7 +54,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
         cell.layer.borderColor = UIColor.red.cgColor
         
        
-        let board = Array(user.boardsAndPins.keys)[indexPath.row]
+        let board = Array(store.userBoardsAndPins.keys)[indexPath.row]
         //let board = user.boards[indexPath.row]
         let boardImage = BoardCollectionViewCell.obtainImagefrom(link: board.largestImage().url)
         
@@ -67,12 +68,9 @@ class UserBoardsCollectionVC: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! BoardFeedTableVC
         let indexPath = collectionView!.indexPathsForSelectedItems!.first!
-        let selectedBoard = Array(user.boardsAndPins.keys)[indexPath.row]
-        destination.selectedBoardPins = user.boardsAndPins[selectedBoard]
-        //let selectedBoard = user.boards[indexPath.row]
-        //destination.selectedBoard = selectedBoard
-        //destination.user = self.user
-        // destination.selectedBoardPins = user.getBoardPins(boardId: selectedBoard.identifier)
+        let selectedBoard = Array(store.userBoardsAndPins.keys)[indexPath.row]
+        print("SELECTED BOARD --> \(selectedBoard.name), pins: \(store.userBoardsAndPins[selectedBoard]!.count)")
+        destination.selectedBoardPins = store.userBoardsAndPins[selectedBoard]
         
     }
 

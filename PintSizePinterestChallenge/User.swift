@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import PinterestSDK
 
+let store = PinterestUserDataStore.sharedInstance
+
 class User {
     var id: String
     
@@ -68,31 +70,17 @@ extension User {
             print("SUCCESS WITH BOARDS!!! :D")
             let responseBoards = success?.boards() as! [PDKBoard]
             for board in responseBoards {
-                print(board.name)
                 if board.largestImage().url == nil {
                     print("ERROR: no image for board available")
                     return
                 }
                 
-                self.boardsAndPins[board] = self.getBoardPins(boardId: board.identifier)
+                if !store.userBoardsAndPins.keys.contains(board) {
+                    self.getBoardPins(for: board, boardId: board.identifier)
+                }
+                
             }
             
-            // self.boards = responseBoards
-            print("***** board & pins *****")
-            for pins in self.boardsAndPins.values {
-                print(pins)
-            }
-            print("************************")
-            
-            print("\n******** USER INFO ********\n")
-            print("id: \(self.id)")
-            print("username: \(self.username)")
-            print("name: \(self.firstName) \(self.lastName)")
-            print("board count: \(self.boardsAndPins.keys.count)")
-            print("\n***************************\n")
-            
-            
-
         }) { (error: Error?) in
             print("BOARD ERROR: \(error?.localizedDescription)")
         }
@@ -103,19 +91,29 @@ extension User {
 //MARK: - Get user's pins for a specified board
 extension User {
     
-    func getBoardPins(boardId: String) -> [PDKPin] {
-        
-        var pins = [PDKPin]()
+    func getBoardPins(for board: PDKBoard, boardId: String) {
         
         PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (responseSuccess) in
             
             print("OBTAINED PINS")
             print(responseSuccess!.pins().count)
             
+            store.userBoardsAndPins[board] = (responseSuccess!.pins() as! [PDKPin])
+            
+            print("\n******** USER INFO ********\n")
+            print("id: \(self.id)")
+            print("username: \(self.username)")
+            print("name: \(self.firstName) \(self.lastName)")
+            print("board count: \(store.userBoardsAndPins.keys.count)")
+            print("board pins: \n")
+            for (board, pins) in store.userBoardsAndPins {
+                print("board: \(board.name), pin count: \(pins.count)")
+            }
+            print("\n***************************\n")
+            
         }) { (responseError) in
             print("PIN ERROR: \(responseError!.localizedDescription)")
         }
         
-        return pins
     }
 }

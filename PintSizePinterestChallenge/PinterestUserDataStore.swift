@@ -10,10 +10,9 @@ import Foundation
 import PinterestSDK
 import CoreData
 
-
 final class PinterestUserDataStore {
     static let sharedInstance = PinterestUserDataStore()
     private init() {}
     
-    var userBoardAndPins : [PDKBoard: [PDKPin]] = [PDKBoard: [PDKPin]] ()
+    var userBoardsAndPins : [PDKBoard: [PDKPin]] = [PDKBoard: [PDKPin]] ()
 }
