@@ -7,5 +7,6 @@ target 'PintSizePinterestChallenge' do
 
   # Pods for PintSizePinterestChallenge
   pod “PinterestSDK”, :git => “git@github.com:pinterest/ios-pdk.git”
+  pod 'NVActivityIndicatorView'
   
 end

@@ -16,18 +16,23 @@ class UserAuthenticationVC: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var activityIndicatorLabel: UILabel!
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         //authenticate user here and fill in user info through authentication process 
         store.user.authenticateUser(in: self)
         self.loginButton.isHidden = true
-        self.enterButton.isHidden = false // this should animate in :) should be complete after all the info is complete, or else risk not having all information loaded in next VC 
+        
+        //animation here
+        
+        self.enterButton.isHidden = false // this should animate in :) should be complete after all the info is complete, or else risk not having all information loaded in next VC
     }
    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicatorLabel.isHidden = true
         self.enterButton.isHidden = true
         // Do any additional setup after loading the view.
     }

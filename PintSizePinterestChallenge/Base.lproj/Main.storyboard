@@ -71,6 +71,16 @@
                                     <constraint firstAttribute="height" constant="81" id="qeG-2L-rjA"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDm-v0-L9E">
+                                <rect key="frame" x="107" y="307" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="AtC-BY-6qe"/>
+                                    <constraint firstAttribute="width" constant="160" id="PfB-o7-39v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -81,11 +91,14 @@
                             <constraint firstItem="UXN-X2-HQ7" firstAttribute="top" secondItem="tYP-gm-JF0" secondAttribute="bottom" constant="-25" id="gCS-3P-P7c"/>
                             <constraint firstItem="UXN-X2-HQ7" firstAttribute="centerX" secondItem="8bG-Gk-mIf" secondAttribute="centerX" id="hZN-XR-PF7"/>
                             <constraint firstItem="H9K-J5-3Kq" firstAttribute="centerX" secondItem="UXN-X2-HQ7" secondAttribute="centerX" id="hyo-yo-EkS"/>
+                            <constraint firstItem="uDm-v0-L9E" firstAttribute="centerX" secondItem="8bG-Gk-mIf" secondAttribute="centerX" id="jl7-PJ-dwX"/>
+                            <constraint firstItem="uDm-v0-L9E" firstAttribute="centerY" secondItem="8bG-Gk-mIf" secondAttribute="centerY" constant="53.5" id="k9G-5h-iMN"/>
                             <constraint firstItem="UXN-X2-HQ7" firstAttribute="top" secondItem="oqC-um-eaW" secondAttribute="bottom" constant="128" id="pIU-bx-Vzp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JD7-ax-YfR"/>
                     <connections>
+                        <outlet property="activityIndicatorLabel" destination="uDm-v0-L9E" id="Qti-am-Cqz"/>
                         <outlet property="enterButton" destination="YCz-lx-eVw" id="IbG-9v-cM1"/>
                         <outlet property="loginButton" destination="H9K-J5-3Kq" id="sqs-bf-51S"/>
                     </connections>
