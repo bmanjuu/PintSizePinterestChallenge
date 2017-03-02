@@ -45,8 +45,14 @@ class BoardFeedTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pin", for: indexPath) as! BoardFeedTableViewCell
         
         let pin = self.selectedBoardPins[indexPath.row]
-        print("getting pin images for: \(pin)")
-        print("pin url: \(pin.url)")
+        print("--- getting pin images ---")
+        print("id: \(pin.identifier)")
+        print("url: \(pin.url)")
+        print("pin url: \(pin.pinURL)")
+        print("description: \(pin.descriptionText)")
+        print("metadata: \(pin.metaData)")
+        print("attribution: \(pin.attribution)")
+        print("--------------------------")
         
         // let pinImage = PinterestAPIClient.obtainImagefrom(link: pin.image.url)
         
