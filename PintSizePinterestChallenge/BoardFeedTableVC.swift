@@ -45,23 +45,23 @@ class BoardFeedTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pin", for: indexPath) as! BoardFeedTableViewCell
         
         let pin = self.selectedBoardPins[indexPath.row]
-        //cell.textLabel!.text = pin.descriptionText
         let pinImage = PinterestAPIClient.obtainImagefrom(link: pin.largestImage().url)
-        // cell.frame.height = pinImage.size.height
+        
+        cell.pinImageView.frame = CGRect(x: cell.pinImageView.frame.origin.x, y: cell.pinImageView.frame.origin.x, width: cell.pinImageView.frame.width, height: pinImage.size.height)
         
         cell.pinImageView.image = pinImage
-        // cell.pinDescriptionLabel.text = pin.descriptionText
+        cell.pinDescriptionLabel.text = pin.descriptionText
 
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 140
+//    }
  
 
     /*
