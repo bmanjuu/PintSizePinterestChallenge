@@ -64,6 +64,8 @@ extension User {
                 
             }
             
+            store.finishedRetrievingData = true
+            
         }) { (error: Error?) in
             print("BOARD ERROR: \(error?.localizedDescription)")
         }

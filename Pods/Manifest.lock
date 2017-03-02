@@ -14,12 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - NVActivityIndicatorView (3.5.1)
   - PinterestSDK (1.0.2):
     - AFNetworking (~> 3.0)
     - SAMKeychain
   - SAMKeychain (1.5.2)
 
 DEPENDENCIES:
+  - NVActivityIndicatorView
   - PinterestSDK (from `git@github.com:pinterest/ios-pdk.git`)
 
 EXTERNAL SOURCES:
@@ -33,9 +35,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
   PinterestSDK: 798aced4e2ce7a9607b3df1ac77abf2c72f57734
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
 
-PODFILE CHECKSUM: a1ef3726ef591c557938530999c7c319a27db0a3
+PODFILE CHECKSUM: a7c021d80f5bfbff0959751a461645f5f2ce86ca
 
 COCOAPODS: 1.2.0

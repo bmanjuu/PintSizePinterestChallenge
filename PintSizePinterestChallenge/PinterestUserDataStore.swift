@@ -15,6 +15,6 @@ final class PinterestUserDataStore {
     private init() {}
     
     var user: User = User()
-    //var user: PDKUser = PDKUser()
-    //var userBoardsAndPins : [PDKBoard: [PDKPin]] = [PDKBoard: [PDKPin]] ()
+    var userAuthenticated: Bool = false
+    var finishedRetrievingData: Bool = false
 }
