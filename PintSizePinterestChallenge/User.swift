@@ -18,6 +18,9 @@ class User {
     var username: String
     var firstName: String
     var lastName: String
+    var name: String {
+        return "\(firstName) \(lastName)"
+    }
     
     var boardsAndPins: [PDKBoard: [PDKPin]]
     
@@ -95,10 +98,33 @@ extension User {
     
     func getBoardPins(for board: PDKBoard, boardId: String) {
         
-        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "image", "note"), withSuccess: { (responseSuccess) in
+        var pins = [PDKPin]()
+        
+        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (responseSuccess) in
             
             print("OBTAINED PINS")
             print(responseSuccess!.pins().count)
+            
+            for pin in responseSuccess!.pins() as! [PDKPin] {
+                
+                PDKClient.sharedInstance().getPinWithIdentifier(pin.identifier, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (retrievedPin) in
+                    
+                    pins.append(retrievedPin!.pin())
+                    
+                    print("--- getting pin images ---")
+                    print("id: \(retrievedPin!.pin().identifier)")
+                    print("image: \(retrievedPin!.pin().image)")
+                    print("url: \(retrievedPin!.pin().url)")
+                    print("pin url: \(retrievedPin!.pin().pinURL)")
+                    print("description: \(retrievedPin!.pin().descriptionText)")
+                    print("--------------------------")
+                    
+                }, andFailure: { (error) in
+                    print("ERROR: error in retrieving pin with identifier")
+                })
+
+            }
+            
             
             store.userBoardsAndPins[board] = (responseSuccess!.pins() as! [PDKPin])
             

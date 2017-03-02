@@ -71,6 +71,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
         let selectedBoard = Array(store.userBoardsAndPins.keys)[indexPath.row]
         print("SELECTED BOARD --> \(selectedBoard.name), pins: \(store.userBoardsAndPins[selectedBoard]!.count)")
         destination.selectedBoardPins = store.userBoardsAndPins[selectedBoard]
+        destination.navigationItem.title! = "\(selectedBoard.name)"
         
     }
 
