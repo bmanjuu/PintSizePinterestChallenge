@@ -105,30 +105,6 @@ extension User {
             print("OBTAINED PINS")
             print(responseSuccess!.pins().count)
             
-            for pin in responseSuccess!.pins() as! [PDKPin] {
-                
-                print("--- getting pin images ---")
-                print("id: \(pin.identifier)")
-                print("image: \(pin.largestImage())")
-                print("image url: \(pin.largestImage().url)")
-                print("pin url: \(pin.pinURL)")
-                print("url: \(pin.url)")
-                print("description: \(pin.descriptionText)")
-                print("--------------------------")
-                
-//                PDKClient.sharedInstance().getPinWithIdentifier(pin.identifier, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (retrievedPin) in
-//                    
-//                    pins.append(retrievedPin!.pin())
-//                    
-//                    
-//                    
-//                }, andFailure: { (error) in
-//                    print("ERROR: error in retrieving pin with identifier")
-//                })
-
-            }
-            
-            
             store.userBoardsAndPins[board] = (responseSuccess!.pins() as! [PDKPin])
             
             print("\n******** USER INFO ********\n")

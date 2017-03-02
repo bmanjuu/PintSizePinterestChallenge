@@ -45,13 +45,10 @@ class BoardFeedTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pin", for: indexPath) as! BoardFeedTableViewCell
         
         let pin = self.selectedBoardPins[indexPath.row]
-        cell.textLabel!.text = pin.descriptionText
-        // let pinImage = PinterestAPIClient.obtainImagefrom(link: pin.image.url)
+        //cell.textLabel!.text = pin.descriptionText
+        let pinImage = PinterestAPIClient.obtainImagefrom(link: pin.largestImage().url)
         
-        //cell.pinImageView.image! = pinImage
-
-        // Configure the cell...
-        cell.textLabel!.text = "HELLO WORLD"
+        cell.pinImageView.image = pinImage
 
         return cell
     }

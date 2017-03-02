@@ -45,7 +45,7 @@ class UserAuthenticationVC: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         let destinationVC = segue.destination as? UserBoardsCollectionVC
         destinationVC?.user = self.user
-        destinationVC?.navigationItem.title! = "\(user.username.capitalized)'s Boards"
+        // destinationVC?.navigationItem.title! = "\(user.username.capitalized)'s Boards"
     }
     
 
