@@ -33,7 +33,7 @@ class BoardCollectionViewCell: UICollectionViewCell {
             // print("retrieving image data")
         }
         
-        print("data: \(boardImageData)")
+        // print("data: \(boardImageData)")
         return UIImage(data: boardImageData)!
         
     }

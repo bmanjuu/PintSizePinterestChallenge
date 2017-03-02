@@ -71,12 +71,13 @@ extension User {
             print("board count: \(success!.boards().count)")
             let responseBoards = success?.boards() as! [PDKBoard]
             for board in responseBoards {
+                print(board.name)
                 if board.largestImage().url == nil {
                     print("ERROR: no image for board available")
                     return
                 }
                 
-                //call method to obtain pins here
+                self.getBoardPins(boardId: board.identifier)
                 
                 self.boardsAndPins[board] = [PDKPin]()
                 //start populating dictionary with board keys
@@ -90,6 +91,8 @@ extension User {
             print("name: \(self.firstName) \(self.lastName)")
             print("board count: \(self.boards.count)")
             print("\n***************************\n")
+            
+            
 
         }) { (error: Error?) in
             print("BOARD ERROR: \(error?.localizedDescription)")
@@ -100,10 +103,10 @@ extension User {
         
         var pinsForBoard = [PDKPin]()
         
-        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "name", "url", "description", "image"), withSuccess: { (responseSuccess) in
+        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (responseSuccess) in
             
             print("OBTAINED PINS")
-            print(responseSuccess)
+            print(responseSuccess?.pins().count)
             
         }) { (responseError) in
             print("PIN ERROR: \(responseError!.localizedDescription)")

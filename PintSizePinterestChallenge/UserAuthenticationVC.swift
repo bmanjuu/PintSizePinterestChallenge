@@ -15,6 +15,7 @@ class UserAuthenticationVC: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         //authenticate user here and fill in user info through authentication process 
         user.authenticateUser(in: self)
@@ -22,6 +23,8 @@ class UserAuthenticationVC: UIViewController {
         self.enterButton.isHidden = false // this should animate in :) should be complete after all the info is complete, or else risk not having all information loaded in next VC 
     }
    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enterButton.isHidden = true
