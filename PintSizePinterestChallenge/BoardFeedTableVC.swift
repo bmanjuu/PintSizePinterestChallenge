@@ -47,10 +47,20 @@ class BoardFeedTableVC: UITableViewController {
         let pin = self.selectedBoardPins[indexPath.row]
         //cell.textLabel!.text = pin.descriptionText
         let pinImage = PinterestAPIClient.obtainImagefrom(link: pin.largestImage().url)
+        // cell.frame.height = pinImage.size.height
         
         cell.pinImageView.image = pinImage
+        // cell.pinDescriptionLabel.text = pin.descriptionText
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
  
 
