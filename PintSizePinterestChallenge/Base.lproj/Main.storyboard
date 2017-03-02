@@ -85,14 +85,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x2Q-QH-17a">
-                                            <rect key="frame" x="53" y="216" width="44.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <rect key="frame" x="0.5" y="216" width="150" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="x2Q-QH-17a" firstAttribute="width" secondItem="BXr-0g-206" secondAttribute="width" id="4jn-WB-7o0"/>
                                     <constraint firstItem="CGv-3c-XQh" firstAttribute="centerX" secondItem="BXr-0g-206" secondAttribute="centerX" id="8OW-pB-1OU"/>
                                     <constraint firstItem="x2Q-QH-17a" firstAttribute="centerX" secondItem="BXr-0g-206" secondAttribute="centerX" id="BZf-Wk-41g"/>
                                     <constraint firstItem="CGv-3c-XQh" firstAttribute="width" secondItem="BXr-0g-206" secondAttribute="width" id="ega-Me-Pfh"/>
