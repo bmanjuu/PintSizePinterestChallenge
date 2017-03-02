@@ -100,28 +100,31 @@ extension User {
         
         var pins = [PDKPin]()
         
-        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (responseSuccess) in
+        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image", "url"), withSuccess: { (responseSuccess) in
             
             print("OBTAINED PINS")
             print(responseSuccess!.pins().count)
             
             for pin in responseSuccess!.pins() as! [PDKPin] {
                 
-                PDKClient.sharedInstance().getPinWithIdentifier(pin.identifier, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (retrievedPin) in
-                    
-                    pins.append(retrievedPin!.pin())
-                    
-                    print("--- getting pin images ---")
-                    print("id: \(retrievedPin!.pin().identifier)")
-                    print("image: \(retrievedPin!.pin().image)")
-                    print("url: \(retrievedPin!.pin().url)")
-                    print("pin url: \(retrievedPin!.pin().pinURL)")
-                    print("description: \(retrievedPin!.pin().descriptionText)")
-                    print("--------------------------")
-                    
-                }, andFailure: { (error) in
-                    print("ERROR: error in retrieving pin with identifier")
-                })
+                print("--- getting pin images ---")
+                print("id: \(pin.identifier)")
+                print("image: \(pin.largestImage())")
+                print("image url: \(pin.largestImage().url)")
+                print("pin url: \(pin.pinURL)")
+                print("url: \(pin.url)")
+                print("description: \(pin.descriptionText)")
+                print("--------------------------")
+                
+//                PDKClient.sharedInstance().getPinWithIdentifier(pin.identifier, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (retrievedPin) in
+//                    
+//                    pins.append(retrievedPin!.pin())
+//                    
+//                    
+//                    
+//                }, andFailure: { (error) in
+//                    print("ERROR: error in retrieving pin with identifier")
+//                })
 
             }
             
