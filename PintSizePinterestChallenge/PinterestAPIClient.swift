@@ -16,6 +16,8 @@ struct PinterestAPIClient {
     static func obtainUserURL() -> String {
         var userURL = ""
         
+        //call api here
+        
         return userURL
     }
     

@@ -13,29 +13,10 @@ import PinterestSDK
 let store = PinterestUserDataStore.sharedInstance
 
 class User {
-    var id: String
     
-    var username: String
-    var firstName: String
-    var lastName: String
-    var name: String {
-        return "\(firstName) \(lastName)"
-    }
+    var boardsAndPins = [PDKBoard: [PDKPin]]()
+    var currentUser: PDKUser = PDKUser()
     
-    var boardsAndPins: [PDKBoard: [PDKPin]]
-    
-    
-    init(id: String, username: String, firstName: String, lastName: String, boardsAndPins: [PDKBoard: [PDKPin]]) {
-        self.id = id
-        self.username = username
-        self.firstName = firstName
-        self.lastName = lastName
-        self.boardsAndPins = boardsAndPins
-    }
-    
-    convenience init() {
-        self.init(id: "", username: "", firstName: "", lastName: "", boardsAndPins: [:])
-    }
 }
 
 //MARK: - Authentication
@@ -50,10 +31,7 @@ extension User {
             guard let successResponseObject = successResponseObject else { return }
             
             print("SUCCESS!!!")
-            self.id = successResponseObject.user().identifier
-            self.username = successResponseObject.user().username
-            self.firstName = successResponseObject.user().firstName
-            self.lastName = successResponseObject.user().lastName
+            store.user.currentUser = successResponseObject.user()
             
             self.getUserBoards()
             
@@ -78,7 +56,7 @@ extension User {
                     return
                 }
                 
-                if store.userBoardsAndPins.keys.contains(board) {
+                if store.user.boardsAndPins.keys.contains(board) {
                     return
                 } else {
                     self.getBoardPins(for: board, boardId: board.identifier)
@@ -105,15 +83,15 @@ extension User {
             print("OBTAINED PINS")
             print(responseSuccess!.pins().count)
             
-            store.userBoardsAndPins[board] = (responseSuccess!.pins() as! [PDKPin])
+            store.user.boardsAndPins[board] = (responseSuccess!.pins() as! [PDKPin])
             
             print("\n******** USER INFO ********\n")
-            print("id: \(self.id)")
-            print("username: \(self.username)")
-            print("name: \(self.firstName) \(self.lastName)")
-            print("board count: \(store.userBoardsAndPins.keys.count)")
+            print("id: \(store.user.currentUser.identifier)")
+            print("username: \(store.user.currentUser.username)")
+            print("name: \(store.user.currentUser.firstName) \(store.user.currentUser.lastName)")
+            print("board count: \(store.user.boardsAndPins.keys.count)")
             print("board pins: \n")
-            for (board, pins) in store.userBoardsAndPins {
+            for (board, pins) in store.user.boardsAndPins {
                 print("board: \(board.name!), pin count: \(pins.count)")
             }
             print("\n***************************\n")

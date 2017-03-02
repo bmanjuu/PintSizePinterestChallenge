@@ -12,13 +12,14 @@ import PinterestSDK
 class UserAuthenticationVC: UIViewController {
     
     var user: User = User() //create empty/new user
+    let store = PinterestUserDataStore.sharedInstance
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         //authenticate user here and fill in user info through authentication process 
-        user.authenticateUser(in: self)
+        store.user.authenticateUser(in: self)
         self.loginButton.isHidden = true
         self.enterButton.isHidden = false // this should animate in :) should be complete after all the info is complete, or else risk not having all information loaded in next VC 
     }
@@ -44,7 +45,7 @@ class UserAuthenticationVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         let destinationVC = segue.destination as? UserBoardsCollectionVC
-        destinationVC?.user = self.user
+        // destinationVC?.user = self.user
         // destinationVC?.navigationItem.title! = "\(user.username.capitalized)'s Boards"
     }
     

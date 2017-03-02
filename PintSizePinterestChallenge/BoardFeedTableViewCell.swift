@@ -11,7 +11,7 @@ import UIKit
 class BoardFeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var pinImageView: UIImageView!
-    @IBOutlet weak var pinDescriptionLabel: UILabel!
+    // @IBOutlet weak var pinDescriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

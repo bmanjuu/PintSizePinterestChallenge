@@ -15,7 +15,7 @@ fileprivate let itemsPerRow: CGFloat = 2
 
 class UserBoardsCollectionVC: UICollectionViewController {
     
-    var user: User!
+    //var user: User!
     let store = PinterestUserDataStore.sharedInstance
 
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return store.userBoardsAndPins.keys.count
+        return store.user.boardsAndPins.keys.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,8 +54,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
         cell.layer.borderColor = UIColor.red.cgColor
         
        
-        let board = Array(store.userBoardsAndPins.keys)[indexPath.row]
-        //let board = user.boards[indexPath.row]
+        let board = Array(store.user.boardsAndPins.keys)[indexPath.row]
         let boardImage = PinterestAPIClient.obtainImagefrom(link: board.largestImage().url)
         
         cell.boardImageView.image = boardImage
@@ -68,9 +67,10 @@ class UserBoardsCollectionVC: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! BoardFeedTableVC
         let indexPath = collectionView!.indexPathsForSelectedItems!.first!
-        let selectedBoard = Array(store.userBoardsAndPins.keys)[indexPath.row]
-        print("SELECTED BOARD --> \(selectedBoard.name), pins: \(store.userBoardsAndPins[selectedBoard]!.count)")
-        destination.selectedBoardPins = store.userBoardsAndPins[selectedBoard]
+        let selectedBoard = Array(store.user.boardsAndPins.keys)[indexPath.row]
+        print("SELECTED BOARD --> \(selectedBoard.name), pins: \(store.user.boardsAndPins[selectedBoard]!.count)")
+        destination.selectedBoardPins = store.user.boardsAndPins[selectedBoard]
+        destination.selectedBoard = selectedBoard
         //destination.navigationItem.title! = "\(selectedBoard.name)"
         
     }

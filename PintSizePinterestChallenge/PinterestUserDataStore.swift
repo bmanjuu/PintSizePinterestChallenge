@@ -14,5 +14,7 @@ final class PinterestUserDataStore {
     static let sharedInstance = PinterestUserDataStore()
     private init() {}
     
-    var userBoardsAndPins : [PDKBoard: [PDKPin]] = [PDKBoard: [PDKPin]] ()
+    var user: User = User()
+    //var user: PDKUser = PDKUser()
+    //var userBoardsAndPins : [PDKBoard: [PDKPin]] = [PDKBoard: [PDKPin]] ()
 }
