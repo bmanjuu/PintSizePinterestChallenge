@@ -12,26 +12,26 @@ import PinterestSDK
 
 class User {
     var id: String
-    var url: String //obtained by calling API
     
     var username: String
     var firstName: String
     var lastName: String
     
     var boards: [PDKBoard]
+    var boardsAndPins: [PDKBoard: [PDKPin]]
     
     
-    init(id: String, url: String, username: String, firstName: String, lastName: String, boards: [PDKBoard]) {
+    init(id: String, username: String, firstName: String, lastName: String, boards: [PDKBoard], boardsAndPins: [PDKBoard: [PDKPin]]) {
         self.id = id
-        self.url = url
         self.username = username
         self.firstName = firstName
         self.lastName = lastName
         self.boards = boards
+        self.boardsAndPins = boardsAndPins
     }
     
     convenience init() {
-        self.init(id: "", url: "", username: "", firstName: "", lastName: "", boards: [PDKBoard]())
+        self.init(id: "", username: "", firstName: "", lastName: "", boards: [PDKBoard](), boardsAndPins: [:])
     }
 }
 
@@ -48,7 +48,6 @@ extension User {
             
             print("SUCCESS!!!")
             self.id = successResponseObject.user().identifier
-            self.url = PinterestAPIClient.obtainUserURL()
             self.username = successResponseObject.user().username
             self.firstName = successResponseObject.user().firstName
             self.lastName = successResponseObject.user().lastName
@@ -65,36 +64,51 @@ extension User {
 extension User {
 
     func getUserBoards() {
+        
         PDKClient.sharedInstance().getAuthenticatedUserBoards(withFields: Set(arrayLiteral: "id", "name", "url", "description", "image"), success: { (success) in
             
             print("SUCCESS WITH BOARDS!!! :D")
             print("board count: \(success!.boards().count)")
             let responseBoards = success?.boards() as! [PDKBoard]
             for board in responseBoards {
-                print(board.name)
                 if board.largestImage().url == nil {
-                    print("nil image")
-                } else {
-                    print(board.largestImage().url)
+                    print("ERROR: no image for board available")
+                    return
                 }
+                
+                //call method to obtain pins here
+                
+                self.boardsAndPins[board] = [PDKPin]()
+                //start populating dictionary with board keys
             }
             
             self.boards = responseBoards
             
             print("\n******** USER INFO ********\n")
             print("id: \(self.id)")
-            print("url: \(self.url)")
             print("username: \(self.username)")
             print("name: \(self.firstName) \(self.lastName)")
             print("board count: \(self.boards.count)")
             print("\n***************************\n")
 
         }) { (error: Error?) in
-            print("ERROR: \(error?.localizedDescription)")
+            print("BOARD ERROR: \(error?.localizedDescription)")
         }
     }
     
-    func getBoardPins(boardId: String) {
-        // PDKClient.sharedInstance().getBoardPins(boardId, fields: <#T##Set<AnyHashable>!#>, withSuccess: <#T##PDKClientSuccess!##PDKClientSuccess!##(PDKResponseObject?) -> Void#>, andFailure: <#T##PDKClientFailure!##PDKClientFailure!##(Error?) -> Void#>)
+    func getBoardPins(boardId: String) -> [PDKPin] {
+        
+        var pinsForBoard = [PDKPin]()
+        
+        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "name", "url", "description", "image"), withSuccess: { (responseSuccess) in
+            
+            print("OBTAINED PINS")
+            print(responseSuccess)
+            
+        }) { (responseError) in
+            print("PIN ERROR: \(responseError!.localizedDescription)")
+        }
+        
+        return pinsForBoard
     }
 }

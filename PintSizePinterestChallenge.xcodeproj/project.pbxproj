@@ -22,6 +22,7 @@
 		A4D9BA191E670A5900AB7EB4 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA181E670A5900AB7EB4 /* Pin.swift */; };
 		A4D9BA1B1E6738E200AB7EB4 /* PinterestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA1A1E6738E200AB7EB4 /* PinterestAPIClient.swift */; };
 		A4D9BA1D1E67704700AB7EB4 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA1C1E67704700AB7EB4 /* BoardCollectionViewCell.swift */; };
+		A4D9BA1F1E67B0A700AB7EB4 /* BoardFeedTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA1E1E67B0A700AB7EB4 /* BoardFeedTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		A4D9BA181E670A5900AB7EB4 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		A4D9BA1A1E6738E200AB7EB4 /* PinterestAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestAPIClient.swift; sourceTree = "<group>"; };
 		A4D9BA1C1E67704700AB7EB4 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4D9BA1E1E67B0A700AB7EB4 /* BoardFeedTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardFeedTableVC.swift; sourceTree = "<group>"; };
 		FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				A4666D5A1E65DD520012B0D9 /* ViewController.swift */,
 				A4D9BA0C1E67067500AB7EB4 /* UserAuthenticationVC.swift */,
 				A4D9BA121E67082A00AB7EB4 /* UserBoardsCollectionVC.swift */,
+				A4D9BA1E1E67B0A700AB7EB4 /* BoardFeedTableVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */,
 				A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */,
 				A4D9BA171E67097700AB7EB4 /* Board.swift in Sources */,
+				A4D9BA1F1E67B0A700AB7EB4 /* BoardFeedTableVC.swift in Sources */,
 				A4D9BA151E67088100AB7EB4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

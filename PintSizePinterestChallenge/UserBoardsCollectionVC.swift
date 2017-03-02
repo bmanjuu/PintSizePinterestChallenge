@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PinterestSDK
 
 private let reuseIdentifier = "board"
 fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 30.0, bottom: 20.0, right: 30.0)
@@ -32,17 +33,6 @@ class UserBoardsCollectionVC: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        
-        //SHOULD BE USED TO SEE DETAILED PINS
     }
  
 
@@ -71,6 +61,17 @@ class UserBoardsCollectionVC: UICollectionViewController {
         cell.boardNameLabel.text = board.name
         
         return cell
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a only preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        let destination = segue.destination as! BoardFeedTableVC
+        let indexPath = collectionView!.indexPathsForSelectedItems!.first!
+        destination.selectedBoard = user.boards[indexPath.row]
     }
 
     // MARK: UICollectionViewDelegate

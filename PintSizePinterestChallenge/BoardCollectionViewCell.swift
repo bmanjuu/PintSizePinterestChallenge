@@ -30,7 +30,7 @@ class BoardCollectionViewCell: UICollectionViewCell {
         }
         
         while boardImageData.isEmpty {
-            print("retrieving image data")
+            // print("retrieving image data")
         }
         
         print("data: \(boardImageData)")
