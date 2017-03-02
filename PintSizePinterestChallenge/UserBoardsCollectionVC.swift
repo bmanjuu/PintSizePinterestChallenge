@@ -60,7 +60,9 @@ class UserBoardsCollectionVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BoardCollectionViewCell
-        cell.backgroundColor = UIColor.red
+        cell.backgroundColor = UIColor.clear
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.red.cgColor
         
         let board = user.boards[indexPath.row]
         let boardImage = BoardCollectionViewCell.obtainImagefrom(link: board.largestImage().url)
