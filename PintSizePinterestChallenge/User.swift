@@ -75,7 +75,9 @@ extension User {
                     return
                 }
                 
-                if !store.userBoardsAndPins.keys.contains(board) {
+                if store.userBoardsAndPins.keys.contains(board) {
+                    return
+                } else {
                     self.getBoardPins(for: board, boardId: board.identifier)
                 }
                 
@@ -93,7 +95,7 @@ extension User {
     
     func getBoardPins(for board: PDKBoard, boardId: String) {
         
-        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (responseSuccess) in
+        PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image", "url"), withSuccess: { (responseSuccess) in
             
             print("OBTAINED PINS")
             print(responseSuccess!.pins().count)
@@ -107,7 +109,7 @@ extension User {
             print("board count: \(store.userBoardsAndPins.keys.count)")
             print("board pins: \n")
             for (board, pins) in store.userBoardsAndPins {
-                print("board: \(board.name), pin count: \(pins.count)")
+                print("board: \(board.name!), pin count: \(pins.count)")
             }
             print("\n***************************\n")
             

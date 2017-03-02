@@ -56,7 +56,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
        
         let board = Array(store.userBoardsAndPins.keys)[indexPath.row]
         //let board = user.boards[indexPath.row]
-        let boardImage = BoardCollectionViewCell.obtainImagefrom(link: board.largestImage().url)
+        let boardImage = PinterestAPIClient.obtainImagefrom(link: board.largestImage().url)
         
         cell.boardImageView.image = boardImage
         cell.boardNameLabel.text = board.name

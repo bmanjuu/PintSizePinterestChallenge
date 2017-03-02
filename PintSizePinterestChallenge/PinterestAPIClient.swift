@@ -20,3 +20,30 @@ struct PinterestAPIClient {
     }
     
 }
+
+//MARK: - Download Images
+extension PinterestAPIClient {
+    static func downloadDataFromImageURL(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    static func obtainImagefrom(link: URL) -> UIImage {
+        var imageData = Data()
+        print("IMAGE LINK: \(link)")
+        
+        downloadDataFromImageURL(url: link) { (data, response, error) in
+            guard let data = data, error == nil else { return }
+            imageData = data
+        }
+        
+        while imageData.isEmpty {
+            // print("retrieving image data")
+        }
+        
+        return UIImage(data: imageData)!
+        
+    }
+}

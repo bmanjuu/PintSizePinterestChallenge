@@ -42,7 +42,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="w8G-eC-Vyb" eventType="touchUpInside" id="B2g-4V-vt7"/>
                                     <segue destination="apR-1e-6dq" kind="show" identifier="showBoards" id="QGs-bu-pxP"/>
                                 </connections>
                             </button>
@@ -63,7 +62,7 @@
         <scene sceneID="rts-96-3f1">
             <objects>
                 <collectionViewController id="apR-1e-6dq" customClass="UserBoardsCollectionVC" customModule="PintSizePinterestChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="0Li-9U-TO6">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0Li-9U-TO6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,13 +127,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pin" id="bKN-qz-dLf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pin" id="bKN-qz-dLf" customClass="BoardFeedTableViewCell" customModule="PintSizePinterestChallenge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bKN-qz-dLf" id="lK7-DR-MG1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0U-3f-70B">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="V0U-3f-70B" secondAttribute="trailing" id="8M6-HT-L26"/>
+                                        <constraint firstItem="V0U-3f-70B" firstAttribute="top" secondItem="lK7-DR-MG1" secondAttribute="top" id="Rtg-Ci-dak"/>
+                                        <constraint firstItem="V0U-3f-70B" firstAttribute="leading" secondItem="lK7-DR-MG1" secondAttribute="leading" id="ipA-gv-BY7"/>
+                                        <constraint firstAttribute="bottom" secondItem="V0U-3f-70B" secondAttribute="bottom" id="jVW-vh-8Is"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pinImageView" destination="V0U-3f-70B" id="oOh-L6-fzK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -145,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZw-AV-Oxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3519" y="146"/>
+            <point key="canvasLocation" x="3517.5999999999999" y="145.27736131934034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RGc-7n-R6S">

@@ -11,9 +11,6 @@ import PinterestSDK
 
 class BoardFeedTableVC: UITableViewController {
     
-    // var user: User!
-    // var selectedBoard: PDKBoard!
-    //var selectedBoardPins: [PDKPin]!
     var selectedBoardPins: [PDKPin]!
 
     override func viewDidLoad() {
@@ -45,7 +42,15 @@ class BoardFeedTableVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pin", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pin", for: indexPath) as! BoardFeedTableViewCell
+        
+        let pin = self.selectedBoardPins[indexPath.row]
+        print("getting pin images for: \(pin)")
+        print("pin url: \(pin.url)")
+        
+        // let pinImage = PinterestAPIClient.obtainImagefrom(link: pin.image.url)
+        
+        //cell.pinImageView.image! = pinImage
 
         // Configure the cell...
         cell.textLabel!.text = "HELLO WORLD"
