@@ -25,7 +25,6 @@ class UserBoardsCollectionVC: UICollectionViewController {
 
         // Register cell classes
         // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        print(user.boards.count)
 
         // Do any additional setup after loading the view.
     }
@@ -39,13 +38,12 @@ class UserBoardsCollectionVC: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return user.boards.count
+        return user.boardsAndPins.keys.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,7 +52,9 @@ class UserBoardsCollectionVC: UICollectionViewController {
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = UIColor.red.cgColor
         
-        let board = user.boards[indexPath.row]
+       
+        let board = Array(user.boardsAndPins.keys)[indexPath.row]
+        //let board = user.boards[indexPath.row]
         let boardImage = BoardCollectionViewCell.obtainImagefrom(link: board.largestImage().url)
         
         cell.boardImageView.image = boardImage
@@ -64,14 +64,16 @@ class UserBoardsCollectionVC: UICollectionViewController {
     }
     
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a only preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         let destination = segue.destination as! BoardFeedTableVC
         let indexPath = collectionView!.indexPathsForSelectedItems!.first!
-        destination.selectedBoard = user.boards[indexPath.row]
+        let selectedBoard = Array(user.boardsAndPins.keys)[indexPath.row]
+        destination.selectedBoardPins = user.boardsAndPins[selectedBoard]
+        //let selectedBoard = user.boards[indexPath.row]
+        //destination.selectedBoard = selectedBoard
+        //destination.user = self.user
+        // destination.selectedBoardPins = user.getBoardPins(boardId: selectedBoard.identifier)
+        
     }
 
     // MARK: UICollectionViewDelegate

@@ -17,21 +17,19 @@ class User {
     var firstName: String
     var lastName: String
     
-    var boards: [PDKBoard]
     var boardsAndPins: [PDKBoard: [PDKPin]]
     
     
-    init(id: String, username: String, firstName: String, lastName: String, boards: [PDKBoard], boardsAndPins: [PDKBoard: [PDKPin]]) {
+    init(id: String, username: String, firstName: String, lastName: String, boardsAndPins: [PDKBoard: [PDKPin]]) {
         self.id = id
         self.username = username
         self.firstName = firstName
         self.lastName = lastName
-        self.boards = boards
         self.boardsAndPins = boardsAndPins
     }
     
     convenience init() {
-        self.init(id: "", username: "", firstName: "", lastName: "", boards: [PDKBoard](), boardsAndPins: [:])
+        self.init(id: "", username: "", firstName: "", lastName: "", boardsAndPins: [:])
     }
 }
 
@@ -68,7 +66,6 @@ extension User {
         PDKClient.sharedInstance().getAuthenticatedUserBoards(withFields: Set(arrayLiteral: "id", "name", "url", "description", "image"), success: { (success) in
             
             print("SUCCESS WITH BOARDS!!! :D")
-            print("board count: \(success!.boards().count)")
             let responseBoards = success?.boards() as! [PDKBoard]
             for board in responseBoards {
                 print(board.name)
@@ -77,19 +74,21 @@ extension User {
                     return
                 }
                 
-                self.getBoardPins(boardId: board.identifier)
-                
-                self.boardsAndPins[board] = [PDKPin]()
-                //start populating dictionary with board keys
+                self.boardsAndPins[board] = self.getBoardPins(boardId: board.identifier)
             }
             
-            self.boards = responseBoards
+            // self.boards = responseBoards
+            print("***** board & pins *****")
+            for pins in self.boardsAndPins.values {
+                print(pins)
+            }
+            print("************************")
             
             print("\n******** USER INFO ********\n")
             print("id: \(self.id)")
             print("username: \(self.username)")
             print("name: \(self.firstName) \(self.lastName)")
-            print("board count: \(self.boards.count)")
+            print("board count: \(self.boardsAndPins.keys.count)")
             print("\n***************************\n")
             
             
@@ -98,20 +97,25 @@ extension User {
             print("BOARD ERROR: \(error?.localizedDescription)")
         }
     }
+}
+
+
+//MARK: - Get user's pins for a specified board
+extension User {
     
     func getBoardPins(boardId: String) -> [PDKPin] {
         
-        var pinsForBoard = [PDKPin]()
+        var pins = [PDKPin]()
         
         PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image"), withSuccess: { (responseSuccess) in
             
             print("OBTAINED PINS")
-            print(responseSuccess?.pins().count)
+            print(responseSuccess!.pins().count)
             
         }) { (responseError) in
             print("PIN ERROR: \(responseError!.localizedDescription)")
         }
         
-        return pinsForBoard
+        return pins
     }
 }

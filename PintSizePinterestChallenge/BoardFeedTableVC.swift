@@ -11,7 +11,10 @@ import PinterestSDK
 
 class BoardFeedTableVC: UITableViewController {
     
-    var selectedBoard: PDKBoard!
+    // var user: User!
+    // var selectedBoard: PDKBoard!
+    //var selectedBoardPins: [PDKPin]!
+    var selectedBoardPins: [PDKPin]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +24,8 @@ class BoardFeedTableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        print("BOARD NAME: \(selectedBoard.name)")
-        print("PIN COUNT: \(selectedBoard.pins)")
+        print("PIN COUNT: \(selectedBoardPins.count)")
+        //print("PIN COUNT: \(selectedBoardPins.count)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +40,7 @@ class BoardFeedTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(self.selectedBoard.pins)
+        return Int(self.selectedBoardPins.count)
     }
 
     

@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		525B49F77FA996AECE3A645D /* Pods_PintSizePinterestChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD41978EF476B125C6803D7 /* Pods_PintSizePinterestChallenge.framework */; };
+		A42646CC1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42646CA1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodeld */; };
 		A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D581E65DD520012B0D9 /* AppDelegate.swift */; };
 		A4666D5B1E65DD520012B0D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D5A1E65DD520012B0D9 /* ViewController.swift */; };
 		A4666D5E1E65DD520012B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4666D5C1E65DD520012B0D9 /* Main.storyboard */; };
-		A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */; };
 		A4666D631E65DD520012B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4666D621E65DD520012B0D9 /* Assets.xcassets */; };
 		A4666D661E65DD520012B0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4666D641E65DD520012B0D9 /* LaunchScreen.storyboard */; };
 		A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D6F1E65E0300012B0D9 /* Secrets.swift */; };
@@ -29,11 +29,11 @@
 /* Begin PBXFileReference section */
 		3179ED28CEBE313F3E5F3BFD /* Pods-PintSizePinterestChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		6CD41978EF476B125C6803D7 /* Pods_PintSizePinterestChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PintSizePinterestChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A42646CB1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PintSizePinterestChallenge.xcdatamodel; sourceTree = "<group>"; };
 		A4666D551E65DD520012B0D9 /* PintSizePinterestChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PintSizePinterestChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4666D581E65DD520012B0D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4666D5A1E65DD520012B0D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4666D5D1E65DD520012B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A4666D601E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PintSizePinterestChallenge.xcdatamodel; sourceTree = "<group>"; };
 		A4666D621E65DD520012B0D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4666D651E65DD520012B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4666D671E65DD530012B0D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 				A4D9BA1A1E6738E200AB7EB4 /* PinterestAPIClient.swift */,
 				A4D9BA1C1E67704700AB7EB4 /* BoardCollectionViewCell.swift */,
 				A4D9BA221E67CA6000AB7EB4 /* PinterestUserDataStore.swift */,
+				A42646CA1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,7 +140,6 @@
 			children = (
 				A4666D621E65DD520012B0D9 /* Assets.xcassets */,
 				A4666D671E65DD530012B0D9 /* Info.plist */,
-				A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -280,13 +280,13 @@
 				A4D9BA131E67082A00AB7EB4 /* UserBoardsCollectionVC.swift in Sources */,
 				A4D9BA0D1E67067500AB7EB4 /* UserAuthenticationVC.swift in Sources */,
 				A4666D5B1E65DD520012B0D9 /* ViewController.swift in Sources */,
+				A42646CC1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodeld in Sources */,
 				A4D9BA191E670A5900AB7EB4 /* Pin.swift in Sources */,
 				A4D9BA231E67CA6000AB7EB4 /* PinterestUserDataStore.swift in Sources */,
 				A4D9BA1B1E6738E200AB7EB4 /* PinterestAPIClient.swift in Sources */,
 				A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */,
 				A4D9BA1D1E67704700AB7EB4 /* BoardCollectionViewCell.swift in Sources */,
 				A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */,
-				A4666D611E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld in Sources */,
 				A4D9BA171E67097700AB7EB4 /* Board.swift in Sources */,
 				A4D9BA1F1E67B0A700AB7EB4 /* BoardFeedTableVC.swift in Sources */,
 				A4D9BA151E67088100AB7EB4 /* User.swift in Sources */,
@@ -458,12 +458,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A4666D5F1E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodeld */ = {
+		A42646CA1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A4666D601E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodel */,
+				A42646CB1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodel */,
 			);
-			currentVersion = A4666D601E65DD520012B0D9 /* PintSizePinterestChallenge.xcdatamodel */;
+			currentVersion = A42646CB1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodel */;
 			path = PintSizePinterestChallenge.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

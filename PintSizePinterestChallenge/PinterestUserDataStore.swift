@@ -7,8 +7,13 @@
 //
 
 import Foundation
-import PinterstSDK
+import PinterestSDK
+import CoreData
 
-class PinterestUserDataStore {
-    //persist user and associated board/pin data so only need to authenticate/retrieve information once  
+
+final class PinterestUserDataStore {
+    static let sharedInstance = PinterestUserDataStore()
+    private init() {}
+    
+    var userBoardAndPins : [PDKBoard: [PDKPin]] = [PDKBoard: [PDKPin]] ()
 }
