@@ -12,6 +12,8 @@ import PinterestSDK
 class PinDetailVC: UIViewController {
     
     var selectedPin: PDKPin!
+    var boardContainingPin: PDKBoard!
+    let store = PinterestUserDataStore.sharedInstance
 
     @IBOutlet weak var selectedPinImage: UIImageView!
     @IBOutlet weak var pinDescriptionLabel: UILabel!
@@ -26,9 +28,10 @@ class PinDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.selectedPinImage.image = PinterestAPIClient.obtainImagefrom(link: selectedPin.largestImage().url)
-        self.boardNameLabel.text = selectedPin.board.name
+        
+        self.boardNameLabel.text = boardContainingPin.name
         self.pinDescriptionLabel.text = selectedPin.descriptionText
-        self.usernameLabel.text = selectedPin.creator.username
+        self.usernameLabel.text = store.user.currentUser.username
     }
 
     override func didReceiveMemoryWarning() {

@@ -62,9 +62,8 @@ class BoardFeedTableVC: UITableViewController {
         let destination = segue.destination as! PinDetailVC
         let selectedPin = selectedBoardPins[tableView.indexPathForSelectedRow!.row]
         destination.selectedPin = selectedPin
-        print("description: \(selectedPin.descriptionText)")
-        print("user: \(selectedPin.creator.username)")
-        print("board: \(selectedPin.board.name)")
+        destination.boardContainingPin = self.selectedBoard
+        print("url: \(selectedPin.url), pin URL: \(selectedPin.pinURL)")
     }
     
     
