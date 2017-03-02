@@ -20,6 +20,11 @@ class PinDetailVC: UIViewController {
     @IBOutlet weak var boardNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBAction func seePinButtonTapped(_ sender: Any) {
+        UIApplication.shared.open(selectedPin.pinURL, options: [:]) { (openedPin) in
+            print("opening webpage to view pin")
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

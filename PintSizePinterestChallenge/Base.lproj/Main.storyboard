@@ -226,6 +226,9 @@
                                 <state key="normal" title="See Pin">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="seePinButtonTapped:" destination="ev6-Pz-Ldd" eventType="touchUpInside" id="YtF-Mv-lO8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIW-lD-juf">
                                 <rect key="frame" x="16" y="597" width="120" height="21"/>
