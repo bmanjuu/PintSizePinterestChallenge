@@ -46,7 +46,7 @@ class BoardFeedTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pin", for: indexPath) as! BoardFeedTableViewCell
         
         let pin = self.selectedBoardPins[indexPath.row]
-        let pinImage = PinterestAPIClient.obtainImagefrom(link: pin.largestImage().url)
+        let pinImage = ImageHelper.obtainImagefrom(link: pin.largestImage().url)
         
         cell.pinImageView.frame = CGRect(x: cell.pinImageView.frame.origin.x, y: cell.pinImageView.frame.origin.x, width: cell.pinImageView.frame.width, height: pinImage.size.height)
         

@@ -9,22 +9,8 @@
 import Foundation
 import PinterestSDK
 
-struct PinterestAPIClient {
+struct ImageHelper {
     
-    static let baseURL = "https://api.pinterest.com/v1/"
-    
-    static func obtainUserURL() -> String {
-        var userURL = ""
-        
-        //call api here
-        
-        return userURL
-    }
-    
-}
-
-//MARK: - Download Images
-extension PinterestAPIClient {
     static func downloadDataFromImageURL(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
@@ -48,4 +34,5 @@ extension PinterestAPIClient {
         return UIImage(data: imageData)!
         
     }
+    
 }

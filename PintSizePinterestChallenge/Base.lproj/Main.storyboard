@@ -75,7 +75,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="enterButtonTapped:" destination="w8G-eC-Vyb" eventType="touchUpInside" id="RPZ-fR-Ukb"/>
                                     <segue destination="apR-1e-6dq" kind="show" identifier="showBoards" id="QGs-bu-pxP"/>
                                 </connections>
                             </button>
