@@ -43,7 +43,7 @@ class UserAuthenticationVC: UIViewController {
         DispatchQueue.global(qos: .background).async {
             //check status of retrieving data in a background thread
             while !self.store.finishedRetrievingData {
-                print("waiting")
+                //print("waiting")
             }
             
             //once data has been retrieved, stop animation and make enter button fade in
