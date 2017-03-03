@@ -35,15 +35,20 @@ class UserAuthenticationVC: UIViewController {
         let loadingActivityIndicator = NVActivityIndicatorView(frame: self.activityIndicatorView.frame, type: .ballScaleRippleMultiple, color: UIColor.lightGray, padding: 0.0)
         self.view.addSubview(loadingActivityIndicator)
         
+        
         DispatchQueue.main.async {
+            //display animation while user is being authenticated and while retrieving data
             self.activityIndicatorView.isHidden = false
             loadingActivityIndicator.startAnimating()
         }
         
         DispatchQueue.global(qos: .background).async {
+            //check status of retrieving data in the background
             while !self.store.finishedRetrievingData {
                 print("waiting")
             }
+            
+            //once data has been retrieved, stop animation and make enter button available 
             DispatchQueue.main.async {
                 loadingActivityIndicator.stopAnimating()
                 self.enterButton.isHidden = false
@@ -52,12 +57,6 @@ class UserAuthenticationVC: UIViewController {
         }
     }
     
-    @IBAction func enterButtonTapped(_ sender: Any) {
-    }
-    
-    func checkStatusOfRetrievingData() {
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
