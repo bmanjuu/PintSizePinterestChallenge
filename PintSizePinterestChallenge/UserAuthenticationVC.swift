@@ -28,38 +28,36 @@ class UserAuthenticationVC: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        //authenticate user here and fill in user info through authentication process 
-        store.user.authenticateUser(in: self)
-        store.userAuthenticated = true
-        self.loginButton.isHidden = true
         
-        let loadingActivityIndicator = NVActivityIndicatorView(frame: self.activityIndicatorView.frame, type: .ballScaleRippleMultiple, color: UIColor.gray, padding: 0.0)
+        self.loginButton.isHidden = true
+        self.store.user.authenticateUser(in: self)
+        
+        let loadingActivityIndicator = NVActivityIndicatorView(frame: self.activityIndicatorView.frame, type: .ballScaleRippleMultiple, color: UIColor.lightGray, padding: 0.0)
         self.view.addSubview(loadingActivityIndicator)
         
-        print("SHOULD START ANIMATING")
-        self.activityIndicatorView.isHidden = false
-        loadingActivityIndicator.startAnimating()
-        
         DispatchQueue.main.async {
-            
+            self.activityIndicatorView.isHidden = false
+            loadingActivityIndicator.startAnimating()
         }
         
-        
-//        if store.finishedRetrievingData {
-//            loadingActivityIndicator.stopAnimating()
-//        } else {
-//            while !store.finishedRetrievingData {
-//                print("waiting to proceed")
-//            }
-//            loadingActivityIndicator.stopAnimating()
-//        }
-        
-        self.enterButton.isHidden = false 
+        DispatchQueue.global(qos: .background).async {
+            while !self.store.finishedRetrievingData {
+                print("waiting")
+            }
+            DispatchQueue.main.async {
+                loadingActivityIndicator.stopAnimating()
+                self.enterButton.isHidden = false
+            }
+            
+        }
     }
-   
     
+    @IBAction func enterButtonTapped(_ sender: Any) {
+    }
     
-    
+    func checkStatusOfRetrievingData() {
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

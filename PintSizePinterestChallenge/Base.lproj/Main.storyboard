@@ -39,21 +39,6 @@
                                     <action selector="loginButtonTapped:" destination="w8G-eC-Vyb" eventType="touchUpInside" id="0El-Gz-FZa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-lx-eVw">
-                                <rect key="frame" x="157" y="372" width="63" height="30"/>
-                                <color key="backgroundColor" red="0.76119251939999999" green="0.2284452152" blue="0.1065263097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="dHV-LJ-8IS"/>
-                                    <constraint firstAttribute="height" constant="30" id="jBd-pX-vWY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Enter">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="apR-1e-6dq" kind="show" identifier="showBoards" id="QGs-bu-pxP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PINT SIZE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tYP-gm-JF0">
                                 <rect key="frame" x="149" y="196" width="78" height="21"/>
                                 <constraints>
@@ -72,18 +57,34 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2Y-vM-3EU">
-                                <rect key="frame" x="107" y="307" width="160" height="160"/>
+                                <rect key="frame" x="107" y="318" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="TGI-7d-dW6"/>
                                     <constraint firstAttribute="height" constant="160" id="dor-5u-ubu"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-lx-eVw">
+                                <rect key="frame" x="156" y="548" width="63" height="30"/>
+                                <color key="backgroundColor" red="0.76119251939999999" green="0.2284452152" blue="0.1065263097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="dHV-LJ-8IS"/>
+                                    <constraint firstAttribute="height" constant="30" id="jBd-pX-vWY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterButtonTapped:" destination="w8G-eC-Vyb" eventType="touchUpInside" id="RPZ-fR-Ukb"/>
+                                    <segue destination="apR-1e-6dq" kind="show" identifier="showBoards" id="QGs-bu-pxP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UXN-X2-HQ7" firstAttribute="centerX" secondItem="tYP-gm-JF0" secondAttribute="centerX" id="3HS-zx-eiI"/>
-                            <constraint firstItem="YCz-lx-eVw" firstAttribute="top" secondItem="H9K-J5-3Kq" secondAttribute="bottom" constant="24" id="Bmb-6v-F1p"/>
-                            <constraint firstItem="USS-kn-aao" firstAttribute="top" secondItem="j2Y-vM-3EU" secondAttribute="bottom" constant="200" id="WQ2-v8-4hc"/>
+                            <constraint firstItem="YCz-lx-eVw" firstAttribute="top" secondItem="H9K-J5-3Kq" secondAttribute="bottom" constant="200" id="Bmb-6v-F1p"/>
+                            <constraint firstItem="USS-kn-aao" firstAttribute="top" secondItem="j2Y-vM-3EU" secondAttribute="bottom" constant="189" id="WQ2-v8-4hc"/>
                             <constraint firstItem="H9K-J5-3Kq" firstAttribute="centerY" secondItem="8bG-Gk-mIf" secondAttribute="centerY" id="aFB-Qw-p2C"/>
                             <constraint firstItem="YCz-lx-eVw" firstAttribute="centerX" secondItem="H9K-J5-3Kq" secondAttribute="centerX" id="cRg-hx-2yz"/>
                             <constraint firstItem="UXN-X2-HQ7" firstAttribute="top" secondItem="tYP-gm-JF0" secondAttribute="bottom" constant="-25" id="gCS-3P-P7c"/>
