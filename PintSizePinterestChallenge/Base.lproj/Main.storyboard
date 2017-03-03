@@ -150,7 +150,7 @@
                                 <connections>
                                     <outlet property="boardImageView" destination="CGv-3c-XQh" id="lHY-sp-Jyl"/>
                                     <outlet property="boardNameLabel" destination="x2Q-QH-17a" id="xAS-zB-FZQ"/>
-                                    <segue destination="q0S-Pt-G0H" kind="show" id="6aj-BG-aaC"/>
+                                    <segue destination="V1F-qW-lBu" kind="show" id="MBk-iJ-0GY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -181,19 +181,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0U-3f-70B">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                            <color key="backgroundColor" red="0.29476009939999998" green="0.66333437500000003" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.56628481220000004" green="0.063253531690000003" blue="0.020165348810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="V0U-3f-70B" secondAttribute="bottom" constant="20" id="3na-Zy-Tdx"/>
-                                        <constraint firstItem="V0U-3f-70B" firstAttribute="leading" secondItem="lK7-DR-MG1" secondAttribute="leading" constant="8" id="UF1-Rx-cCM"/>
-                                        <constraint firstAttribute="trailing" secondItem="V0U-3f-70B" secondAttribute="trailing" constant="8" id="vKy-3A-df4"/>
-                                        <constraint firstItem="V0U-3f-70B" firstAttribute="top" secondItem="lK7-DR-MG1" secondAttribute="top" id="wmT-YF-5kH"/>
+                                        <constraint firstAttribute="bottom" secondItem="V0U-3f-70B" secondAttribute="bottom" id="ZSi-di-aGw"/>
+                                        <constraint firstAttribute="trailing" secondItem="V0U-3f-70B" secondAttribute="trailing" id="fD0-f7-aMO"/>
+                                        <constraint firstItem="V0U-3f-70B" firstAttribute="top" secondItem="lK7-DR-MG1" secondAttribute="top" id="qXu-PF-ui8"/>
+                                        <constraint firstItem="V0U-3f-70B" firstAttribute="leading" secondItem="lK7-DR-MG1" secondAttribute="leading" id="rQK-36-lH7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.76446492519999998" green="0.77528633440000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="pinImageView" destination="V0U-3f-70B" id="oOh-L6-fzK"/>
-                                    <segue destination="ev6-Pz-Ldd" kind="show" id="mqc-GE-G1Z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -205,7 +207,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZw-AV-Oxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3517.5999999999999" y="145.27736131934034"/>
+            <point key="canvasLocation" x="3663" y="864"/>
+        </scene>
+        <!--Pin Feed CollectionVC-->
+        <scene sceneID="ksf-a4-Cow">
+            <objects>
+                <collectionViewController id="V1F-qW-lBu" customClass="PinFeedCollectionVC" customModule="PintSizePinterestChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="JOG-Ng-qhB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="ZEd-ek-Y0F" customClass="PinFeedCustomLayout" customModule="PintSizePinterestChallenge" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pin" id="I3z-i4-ayj">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                                <connections>
+                                    <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="V1F-qW-lBu" id="P7U-bX-xlU"/>
+                            <outlet property="delegate" destination="V1F-qW-lBu" id="nqS-gB-hXg"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HsY-Uz-SH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3538" y="146"/>
         </scene>
         <!--Pin DetailVC-->
         <scene sceneID="jlL-f7-EPI">
