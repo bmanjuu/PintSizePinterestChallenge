@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import AVFoundation
+import PinterestSDK
 
 private let reuseIdentifier = "Cell"
 
 class PinFeedCollectionVC: UICollectionViewController {
+    
+    var selectedBoard: PDKBoard!
+    var selectedBoardPins: [PDKPin]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let layout = collectionView?.collectionViewLayout as? PinterestCustomLayout {
+            layout.delegate = self
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,7 +37,7 @@ class PinFeedCollectionVC: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -42,14 +51,12 @@ class PinFeedCollectionVC: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return Int(self.selectedBoardPins.count)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,4 +98,37 @@ class PinFeedCollectionVC: UICollectionViewController {
     }
     */
 
+}
+
+extension PinFeedCollectionVC: PinterestCustomLayoutDelegate {
+    
+    func collectionView(collectionView:UICollectionView,
+                        heightForPhotoAtIndexPath indexPath: NSIndexPath,
+                        withWidth width: CGFloat) -> CGFloat {
+        let pin = self.selectedBoardPins[indexPath.item]
+        let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+        let rect = AVMakeRect(aspectRatio: CGSize(width: pin.largestImage().width, height: pin.largestImage().height), insideRect: boundingRect)
+        
+        return rect.size.height
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+                        heightForAnnotationAtIndexPath indexPath: NSIndexPath,
+                        withWidth width: CGFloat) -> CGFloat {
+        let annotationPadding = CGFloat(4)
+        let annotationHeaderHeight = CGFloat(17)
+        let pin = self.selectedBoardPins[indexPath.item]
+        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+        let commentHeight = pin.heightForComment(font: font, width: width, pin: pin)
+        let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
+        return height
+    }
+}
+
+extension PDKPin {
+    
+    func heightForComment(font: UIFont, width: CGFloat, pin: PDKPin) -> CGFloat {
+        let rect = NSString(string: pin.descriptionText).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return ceil(rect.height)
+    }
 }

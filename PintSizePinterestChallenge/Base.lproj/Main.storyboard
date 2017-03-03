@@ -177,7 +177,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bKN-qz-dLf" id="lK7-DR-MG1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0U-3f-70B">
@@ -217,16 +217,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewLayout key="collectionViewLayout" id="ZEd-ek-Y0F" customClass="PinFeedCustomLayout" customModule="PintSizePinterestChallenge" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="ZEd-ek-Y0F" customClass="PinterestCustomLayout" customModule="PintSizePinterestChallenge" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pin" id="I3z-i4-ayj">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pin" id="I3z-i4-ayj" customClass="PinCustomCell" customModule="PintSizePinterestChallenge" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-00-htO">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Y0h-00-htO" secondAttribute="bottom" id="2LU-SJ-ezZ"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="KOf-Ac-2ph"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="top" id="eai-cx-iKE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="uT0-aK-0yl"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="200"/>
                                 <connections>
+                                    <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>
                                 </connections>
                             </collectionViewCell>
@@ -239,7 +252,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsY-Uz-SH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3538" y="146"/>
+            <point key="canvasLocation" x="3536.8000000000002" y="145.27736131934034"/>
         </scene>
         <!--Pin DetailVC-->
         <scene sceneID="jlL-f7-EPI">
