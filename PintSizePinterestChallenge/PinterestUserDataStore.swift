@@ -11,6 +11,7 @@ import PinterestSDK
 import CoreData
 
 final class PinterestUserDataStore {
+    
     static let sharedInstance = PinterestUserDataStore()
     private init() {}
     

@@ -22,8 +22,6 @@ class BoardFeedTableVC: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        print("PIN COUNT: \(selectedBoardPins.count)")
-        //print("PIN COUNT: \(selectedBoardPins.count)")
     }
     
     override func didReceiveMemoryWarning() {

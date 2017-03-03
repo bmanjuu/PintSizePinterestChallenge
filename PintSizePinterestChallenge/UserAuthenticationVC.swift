@@ -14,7 +14,6 @@ class UserAuthenticationVC: UIViewController {
     
     var user: User = User() //create empty/new user
     let store = PinterestUserDataStore.sharedInstance
-    
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
@@ -24,7 +23,6 @@ class UserAuthenticationVC: UIViewController {
         super.viewDidLoad()
         self.activityIndicatorView.isHidden = true
         self.enterButton.alpha = 0.0
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -43,7 +41,7 @@ class UserAuthenticationVC: UIViewController {
         }
         
         DispatchQueue.global(qos: .background).async {
-            //check status of retrieving data in the background
+            //check status of retrieving data in a background thread
             while !self.store.finishedRetrievingData {
                 print("waiting")
             }
@@ -72,12 +70,12 @@ class UserAuthenticationVC: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // let destinationVC = segue.destination as? UserBoardsCollectionVC
         // destinationVC?.user = self.user
         // destinationVC?.navigationItem.title! = "\(user.username.capitalized)'s Boards"
-    }
+    //}
     
 
 }

@@ -14,8 +14,7 @@ fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 30.0, bottom: 20.0
 fileprivate let itemsPerRow: CGFloat = 2
 
 class UserBoardsCollectionVC: UICollectionViewController {
-    
-    //var user: User!
+
     let store = PinterestUserDataStore.sharedInstance
 
     override func viewDidLoad() {
@@ -71,8 +70,6 @@ class UserBoardsCollectionVC: UICollectionViewController {
         print("SELECTED BOARD --> \(selectedBoard.name), pins: \(store.user.boardsAndPins[selectedBoard]!.count)")
         destination.selectedBoardPins = store.user.boardsAndPins[selectedBoard]
         destination.selectedBoard = selectedBoard
-        //destination.navigationItem.title! = "\(selectedBoard.name)"
-        
     }
 
     // MARK: UICollectionViewDelegate

@@ -78,8 +78,6 @@ extension User {
     
     func getBoardPins(for board: PDKBoard, boardId: String) {
         
-        var pins = [PDKPin]()
-        
         PDKClient.sharedInstance().getBoardPins(boardId, fields: Set(arrayLiteral: "id", "note", "image", "url"), withSuccess: { (responseSuccess) in
             
             print("OBTAINED PINS")
