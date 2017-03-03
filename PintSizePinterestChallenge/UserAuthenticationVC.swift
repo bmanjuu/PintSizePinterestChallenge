@@ -53,10 +53,10 @@ class UserAuthenticationVC: UIViewController {
                 UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                     self.enterButton.alpha = 1.0
                 }, completion: nil)
-                
             }
-            
         }
+        
+        
     }
     
 
