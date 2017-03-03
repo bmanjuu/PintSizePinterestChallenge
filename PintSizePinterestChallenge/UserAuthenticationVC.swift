@@ -23,7 +23,7 @@ class UserAuthenticationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicatorView.isHidden = true
-        self.enterButton.isHidden = true
+        self.enterButton.alpha = 0.0
         // Do any additional setup after loading the view.
     }
     
@@ -48,10 +48,14 @@ class UserAuthenticationVC: UIViewController {
                 print("waiting")
             }
             
-            //once data has been retrieved, stop animation and make enter button available 
+            //once data has been retrieved, stop animation and make enter button fade in
             DispatchQueue.main.async {
                 loadingActivityIndicator.stopAnimating()
-                self.enterButton.isHidden = false
+                
+                UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                    self.enterButton.alpha = 1.0
+                }, completion: nil)
+                
             }
             
         }
