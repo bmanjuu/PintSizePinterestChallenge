@@ -127,10 +127,10 @@
 			children = (
 				A4D9BA0C1E67067500AB7EB4 /* UserAuthenticationVC.swift */,
 				A4D9BA121E67082A00AB7EB4 /* UserBoardsCollectionVC.swift */,
-				A4B581B91E69F29E006FE4E4 /* PinFeedCollectionVC.swift */,
-				A42646CF1E68B52D000AA861 /* PinDetailVC.swift */,
 				A4D9BA1C1E67704700AB7EB4 /* BoardCollectionViewCell.swift */,
+				A4B581B91E69F29E006FE4E4 /* PinFeedCollectionVC.swift */,
 				A4DEF5071E6A092400B4A91F /* PinCustomCell.swift */,
+				A42646CF1E68B52D000AA861 /* PinDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

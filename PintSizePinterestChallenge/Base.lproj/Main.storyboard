@@ -184,14 +184,14 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-00-htO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="wwq-pb-jay"/>
+                                                <constraint firstAttribute="height" constant="200" id="FEd-WE-diL"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rua-XH-4xu">
                                             <rect key="frame" x="0.0" y="203" width="200" height="17"/>
                                             <color key="backgroundColor" red="1" green="0.66524018963351683" blue="0.013711547810119629" alpha="0.52462037852112675" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="17" id="Qmo-eP-t0B"/>
+                                                <constraint firstAttribute="height" constant="17" id="DUo-dS-fr6"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -206,23 +206,23 @@
                                         </label>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.3586290097374053" blue="0.59427309266893502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="Y0h-00-htO" secondAttribute="trailing" constant="-8" id="4sC-Kr-7OI"/>
-                                    <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leadingMargin" constant="-8" id="CH1-fv-5zG"/>
-                                    <constraint firstItem="rua-XH-4xu" firstAttribute="bottom" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="20" id="CLO-WO-Wg4"/>
-                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="leading" secondItem="rua-XH-4xu" secondAttribute="leading" id="bMd-zK-9SQ"/>
-                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="trailing" secondItem="rua-XH-4xu" secondAttribute="trailing" id="jWF-cB-OzY"/>
-                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="top" secondItem="rua-XH-4xu" secondAttribute="bottom" constant="6" id="jpK-79-Co5"/>
-                                    <constraint firstItem="rua-XH-4xu" firstAttribute="leading" secondItem="Y0h-00-htO" secondAttribute="leading" id="mWM-4t-EmQ"/>
-                                    <constraint firstItem="rua-XH-4xu" firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="r9s-aq-4nd"/>
-                                    <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="topMargin" constant="-8" id="uGK-MX-0kc"/>
+                                    <constraint firstItem="rua-XH-4xu" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="3" id="Mss-vL-qnY"/>
+                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="top" secondItem="rua-XH-4xu" secondAttribute="bottom" constant="6" id="RHv-fD-sV7"/>
+                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="top" secondItem="rua-XH-4xu" secondAttribute="bottom" constant="6" id="Wlr-KO-exZ"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="top" id="aCH-05-zl8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="ePY-kQ-Rsw"/>
+                                    <constraint firstItem="rua-XH-4xu" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="3" id="hKc-KR-CWC"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="kwz-CL-M8N"/>
+                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="m3o-xl-Lgu"/>
+                                    <constraint firstAttribute="trailing" secondItem="CTY-CV-6qg" secondAttribute="trailing" id="mWc-0i-kAF"/>
+                                    <constraint firstAttribute="trailing" secondItem="rua-XH-4xu" secondAttribute="trailing" id="pTG-cv-EX6"/>
+                                    <constraint firstItem="rua-XH-4xu" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="z8H-ci-Own"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="282"/>
                                 <connections>
                                     <outlet property="descriptionText" destination="CTY-CV-6qg" id="Zeg-8B-Oub"/>
                                     <outlet property="descriptionTitle" destination="rua-XH-4xu" id="6uv-1Q-BRz"/>
-                                    <outlet property="pinImageHeightLayoutConstraint" destination="wwq-pb-jay" id="KYl-6D-z4T"/>
                                     <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>
                                 </connections>

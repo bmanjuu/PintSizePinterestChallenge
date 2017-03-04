@@ -67,10 +67,7 @@ class PinFeedCollectionVC: UICollectionViewController {
         let pin = self.selectedBoardPins[indexPath.row]
         let pinImage = ImageHelper.obtainImagefrom(link: pin.largestImage().url)
         
-        cell.pinImageView.frame = CGRect(x: cell.pinImageView.frame.origin.x, y: cell.pinImageView.frame.origin.x, width: cell.pinImageView.frame.width, height: pinImage.size.height)
-        
         cell.pinImageView.image = pinImage
-    
         return cell
     }
 
@@ -129,13 +126,5 @@ extension PinFeedCollectionVC: PinterestCustomLayoutDelegate {
         let commentHeight = pin.heightForComment(font: font, width: width, pin: pin)
         let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
         return height
-    }
-}
-
-extension PDKPin {
-    
-    func heightForComment(font: UIFont, width: CGFloat, pin: PDKPin) -> CGFloat {
-        let rect = NSString(string: pin.descriptionText).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
-        return ceil(rect.height)
     }
 }

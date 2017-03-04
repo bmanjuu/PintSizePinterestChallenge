@@ -102,3 +102,16 @@ extension User {
         
     }
 }
+
+extension PDKPin {
+    
+    var displayPinImage: UIImage {
+        return ImageHelper.obtainImagefrom(link: PDKPin().largestImage().url)
+    }
+    
+    func heightForComment(font: UIFont, width: CGFloat, pin: PDKPin) -> CGFloat {
+        let rect = NSString(string: pin.descriptionText).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return ceil(rect.height)
+    }
+
+}
