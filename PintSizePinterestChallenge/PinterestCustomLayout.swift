@@ -10,6 +10,14 @@ import UIKit
 
 /* the following is based off of Ray Wenderlich's tutorial (seen here: https://www.raywenderlich.com/107439/uicollectionview-custom-layout-tutorial-pinterest) and converted into Swift 3 syntax */
 
+
+protocol PinterestCustomLayoutDelegate {
+    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath, withWidth:CGFloat) -> CGFloat
+    
+    func collectionView(collectionView: UICollectionView,
+                        heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat
+}
+
 class PinterestCustomLayout: UICollectionViewLayout {
     
     var delegate: PinterestCustomLayoutDelegate!
@@ -79,11 +87,4 @@ class PinterestCustomLayout: UICollectionViewLayout {
         return layoutAttributes
     }
 
-}
-
-protocol PinterestCustomLayoutDelegate {
-    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath, withWidth:CGFloat) -> CGFloat
-    
-    func collectionView(collectionView: UICollectionView,
-                        heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat
 }

@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import PinterestSDK
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "pin"
 
 class PinFeedCollectionVC: UICollectionViewController {
     
@@ -60,9 +60,14 @@ class PinFeedCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PinCustomCell
     
-        // Configure the cell
+        let pin = self.selectedBoardPins[indexPath.row]
+        let pinImage = ImageHelper.obtainImagefrom(link: pin.largestImage().url)
+        
+        cell.pinImageView.frame = CGRect(x: cell.pinImageView.frame.origin.x, y: cell.pinImageView.frame.origin.x, width: cell.pinImageView.frame.width, height: pinImage.size.height)
+        
+        cell.pinImageView.image = pinImage
     
         return cell
     }
