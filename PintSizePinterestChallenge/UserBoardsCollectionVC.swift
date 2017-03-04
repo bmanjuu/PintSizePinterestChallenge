@@ -52,11 +52,9 @@ class UserBoardsCollectionVC: UICollectionViewController {
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = UIColor.red.cgColor
         
-       
         let board = Array(store.user.boardsAndPins.keys)[indexPath.row]
-        let boardImage = ImageHelper.obtainImagefrom(link: board.largestImage().url)
         
-        cell.boardImageView.image = boardImage
+        cell.boardImageView.setImageWith(board.largestImage().url)
         cell.boardNameLabel.text = board.name
         
         return cell

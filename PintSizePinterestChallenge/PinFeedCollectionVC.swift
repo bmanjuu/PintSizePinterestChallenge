@@ -65,9 +65,8 @@ class PinFeedCollectionVC: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PinCustomCell
     
         let pin = self.selectedBoardPins[indexPath.row]
-        let pinImage = ImageHelper.obtainImagefrom(link: pin.largestImage().url)
+        cell.pinImageView.setImageWith(pin.largestImage().url)
         
-        cell.pinImageView.image = pinImage
         return cell
     }
 
