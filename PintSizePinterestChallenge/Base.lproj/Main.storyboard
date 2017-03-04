@@ -175,24 +175,49 @@
                         <collectionViewLayout key="collectionViewLayout" id="ZEd-ek-Y0F" customClass="PinterestCustomLayout" customModule="PintSizePinterestChallenge" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pin" id="I3z-i4-ayj" customClass="PinCustomCell" customModule="PintSizePinterestChallenge" customModuleProvider="target">
-                                <rect key="frame" x="88" y="0.0" width="200" height="200"/>
+                                <rect key="frame" x="88" y="0.0" width="200" height="286"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="286"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-00-htO">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-00-htO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baa-Tn-aZ1">
+                                            <rect key="frame" x="8" y="210" width="83" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="QtT-nh-EvV"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="n0c-Jd-OR9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-C0-NDD">
+                                            <rect key="frame" x="8" y="228" width="184" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="184" id="4tw-oT-hf2"/>
+                                                <constraint firstAttribute="height" constant="50" id="cfz-ic-0YE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" red="1" green="0.85208847740000004" blue="0.85618023009999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Y0h-00-htO" secondAttribute="bottom" id="NPO-h5-GNx"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="fMs-Jt-oaj"/>
-                                    <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="top" id="jTG-sS-shI"/>
-                                    <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="lbO-Fc-v1q"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="top" id="58M-2f-NUW"/>
+                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="top" secondItem="baa-Tn-aZ1" secondAttribute="bottom" constant="1" id="IUj-iN-44n"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="Iox-MA-6Zs"/>
+                                    <constraint firstAttribute="leadingMargin" secondItem="baa-Tn-aZ1" secondAttribute="leading" id="K1o-wH-Hes"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="Nw7-a9-Z1z"/>
+                                    <constraint firstItem="baa-Tn-aZ1" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="10" id="XTr-ll-nHP"/>
+                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="leading" secondItem="baa-Tn-aZ1" secondAttribute="leading" id="hF6-GS-gCT"/>
+                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="bottom" secondItem="I3z-i4-ayj" secondAttribute="bottomMargin" id="mqL-F0-ZSQ"/>
                                 </constraints>
-                                <size key="customSize" width="200" height="200"/>
+                                <size key="customSize" width="200" height="286"/>
                                 <connections>
                                     <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>

@@ -106,7 +106,7 @@ extension User {
 extension PDKPin {
     
     var displayPinImage: UIImage {
-        return ImageHelper.obtainImagefrom(link: PDKPin().largestImage().url)
+        return ImageHelper.obtainImagefrom(link: self.largestImage().url)
     }
     
     func heightForComment(font: UIFont, width: CGFloat, pin: PDKPin) -> CGFloat {
