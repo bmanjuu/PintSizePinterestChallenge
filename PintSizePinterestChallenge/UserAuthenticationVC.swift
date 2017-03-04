@@ -50,7 +50,7 @@ class UserAuthenticationVC: UIViewController {
             DispatchQueue.main.async {
                 loadingActivityIndicator.stopAnimating()
                 
-                UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                     self.enterButton.alpha = 1.0
                 }, completion: nil)
             }
