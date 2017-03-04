@@ -63,10 +63,12 @@ class PinterestCustomLayout: UICollectionViewLayout {
 
         if cache.isEmpty {
             let columnWidth = contentWidth / CGFloat(numberOfColumns)
+            
             var xOffset = [CGFloat]()
             for column in 0 ..< numberOfColumns {
                 xOffset.append(CGFloat(column) * columnWidth )
             }
+            
             var column = 0
             var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
             
