@@ -175,54 +175,25 @@
                         <collectionViewLayout key="collectionViewLayout" id="ZEd-ek-Y0F" customClass="PinterestCustomLayout" customModule="PintSizePinterestChallenge" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pin" id="I3z-i4-ayj" customClass="PinCustomCell" customModule="PintSizePinterestChallenge" customModuleProvider="target">
-                                <rect key="frame" x="88" y="0.0" width="200" height="282"/>
+                                <rect key="frame" x="88" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="282"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-00-htO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="FEd-WE-diL"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rua-XH-4xu">
-                                            <rect key="frame" x="0.0" y="203" width="200" height="17"/>
-                                            <color key="backgroundColor" red="1" green="0.66524018963351683" blue="0.013711547810119629" alpha="0.52462037852112675" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="17" id="DUo-dS-fr6"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTY-CV-6qg">
-                                            <rect key="frame" x="0.0" y="226" width="200" height="21"/>
-                                            <color key="backgroundColor" red="1" green="0.85208847740000004" blue="0.85618023009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="rua-XH-4xu" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="3" id="Mss-vL-qnY"/>
-                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="top" secondItem="rua-XH-4xu" secondAttribute="bottom" constant="6" id="RHv-fD-sV7"/>
-                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="top" secondItem="rua-XH-4xu" secondAttribute="bottom" constant="6" id="Wlr-KO-exZ"/>
-                                    <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="top" id="aCH-05-zl8"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="ePY-kQ-Rsw"/>
-                                    <constraint firstItem="rua-XH-4xu" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="3" id="hKc-KR-CWC"/>
-                                    <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="kwz-CL-M8N"/>
-                                    <constraint firstItem="CTY-CV-6qg" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="m3o-xl-Lgu"/>
-                                    <constraint firstAttribute="trailing" secondItem="CTY-CV-6qg" secondAttribute="trailing" id="mWc-0i-kAF"/>
-                                    <constraint firstAttribute="trailing" secondItem="rua-XH-4xu" secondAttribute="trailing" id="pTG-cv-EX6"/>
-                                    <constraint firstItem="rua-XH-4xu" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="z8H-ci-Own"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y0h-00-htO" secondAttribute="bottom" id="NPO-h5-GNx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="fMs-Jt-oaj"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="top" id="jTG-sS-shI"/>
+                                    <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="lbO-Fc-v1q"/>
                                 </constraints>
-                                <size key="customSize" width="200" height="282"/>
+                                <size key="customSize" width="200" height="200"/>
                                 <connections>
-                                    <outlet property="descriptionText" destination="CTY-CV-6qg" id="Zeg-8B-Oub"/>
-                                    <outlet property="descriptionTitle" destination="rua-XH-4xu" id="6uv-1Q-BRz"/>
                                     <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>
                                 </connections>
