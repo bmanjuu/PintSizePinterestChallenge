@@ -164,51 +164,6 @@
             </objects>
             <point key="canvasLocation" x="2668" y="146.17691154422789"/>
         </scene>
-        <!--Board Feed TableVC-->
-        <scene sceneID="SoQ-qw-7De">
-            <objects>
-                <tableViewController id="q0S-Pt-G0H" customClass="BoardFeedTableVC" customModule="PintSizePinterestChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="362" sectionHeaderHeight="28" sectionFooterHeight="28" id="dQo-Lf-NZA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pin" rowHeight="140" id="bKN-qz-dLf" customClass="BoardFeedTableViewCell" customModule="PintSizePinterestChallenge" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="140"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bKN-qz-dLf" id="lK7-DR-MG1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0U-3f-70B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
-                                            <color key="backgroundColor" red="0.29476009939999998" green="0.66333437500000003" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.56628481220000004" green="0.063253531690000003" blue="0.020165348810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="V0U-3f-70B" secondAttribute="bottom" id="ZSi-di-aGw"/>
-                                        <constraint firstAttribute="trailing" secondItem="V0U-3f-70B" secondAttribute="trailing" id="fD0-f7-aMO"/>
-                                        <constraint firstItem="V0U-3f-70B" firstAttribute="top" secondItem="lK7-DR-MG1" secondAttribute="top" id="qXu-PF-ui8"/>
-                                        <constraint firstItem="V0U-3f-70B" firstAttribute="leading" secondItem="lK7-DR-MG1" secondAttribute="leading" id="rQK-36-lH7"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.76446492519999998" green="0.77528633440000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="pinImageView" destination="V0U-3f-70B" id="oOh-L6-fzK"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="q0S-Pt-G0H" id="TrQ-qs-xEb"/>
-                            <outlet property="delegate" destination="q0S-Pt-G0H" id="aC4-9e-to2"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aZw-AV-Oxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3577" y="915"/>
-        </scene>
         <!--Pin Feed CollectionVC-->
         <scene sceneID="ksf-a4-Cow">
             <objects>
@@ -228,6 +183,9 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-00-htO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="wwq-pb-jay"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -239,6 +197,7 @@
                                 </constraints>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
+                                    <outlet property="pinImageHeightLayoutConstraint" destination="wwq-pb-jay" id="KYl-6D-z4T"/>
                                     <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>
                                 </connections>

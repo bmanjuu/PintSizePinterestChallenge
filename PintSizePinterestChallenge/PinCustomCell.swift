@@ -10,4 +10,12 @@ import UIKit
 
 class PinCustomCell: UICollectionViewCell {
     @IBOutlet weak var pinImageView: UIImageView!
+    @IBOutlet weak var pinImageHeightLayoutConstraint: NSLayoutConstraint!
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+        if let attributes = layoutAttributes as? PinterestCustomLayoutAttributes {
+            pinImageHeightLayoutConstraint.constant = attributes.photoHeight
+        }
+    }
 }

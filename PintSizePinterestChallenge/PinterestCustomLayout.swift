@@ -24,7 +24,7 @@ class PinterestCustomLayoutAttributes: UICollectionViewLayoutAttributes {
 
     var photoHeight: CGFloat = 0.0
     
-    override func copy(with zone: NSZone? = nil) -> Any {
+    override func copy(with zone: NSZone?) -> Any {
         let copy = super.copy(with: zone) as! PinterestCustomLayoutAttributes
         copy.photoHeight = photoHeight
         return copy
@@ -33,7 +33,7 @@ class PinterestCustomLayoutAttributes: UICollectionViewLayoutAttributes {
     
     override func isEqual(_ object: Any?) -> Bool {
         if let attributes = object as? PinterestCustomLayoutAttributes {
-            if( attributes.photoHeight == photoHeight  ) {
+            if(attributes.photoHeight == photoHeight) {
                 return super.isEqual(object)
             }
         }
@@ -101,6 +101,10 @@ class PinterestCustomLayout: UICollectionViewLayout {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
+    override class var layoutAttributesClass: AnyClass {
+        return PinterestCustomLayoutAttributes.self
+    }
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
@@ -111,10 +115,6 @@ class PinterestCustomLayout: UICollectionViewLayout {
             }
         }
         return layoutAttributes
-    }
-    
-    override class var layoutAttributesClass: AnyClass {
-        return PinterestCustomLayoutAttributes.self
     }
 
 }

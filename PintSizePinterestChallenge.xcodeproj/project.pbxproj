@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		525B49F77FA996AECE3A645D /* Pods_PintSizePinterestChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD41978EF476B125C6803D7 /* Pods_PintSizePinterestChallenge.framework */; };
 		A42646CC1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42646CA1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodeld */; };
-		A42646CE1E6883D2000AA861 /* BoardFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42646CD1E6883D2000AA861 /* BoardFeedTableViewCell.swift */; };
 		A42646D01E68B52D000AA861 /* PinDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42646CF1E68B52D000AA861 /* PinDetailVC.swift */; };
 		A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4666D581E65DD520012B0D9 /* AppDelegate.swift */; };
 		A4666D5E1E65DD520012B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4666D5C1E65DD520012B0D9 /* Main.storyboard */; };
@@ -23,7 +22,6 @@
 		A4D9BA151E67088100AB7EB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA141E67088100AB7EB4 /* User.swift */; };
 		A4D9BA1B1E6738E200AB7EB4 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA1A1E6738E200AB7EB4 /* ImageHelper.swift */; };
 		A4D9BA1D1E67704700AB7EB4 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA1C1E67704700AB7EB4 /* BoardCollectionViewCell.swift */; };
-		A4D9BA1F1E67B0A700AB7EB4 /* BoardFeedTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA1E1E67B0A700AB7EB4 /* BoardFeedTableVC.swift */; };
 		A4D9BA231E67CA6000AB7EB4 /* PinterestUserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9BA221E67CA6000AB7EB4 /* PinterestUserDataStore.swift */; };
 		A4DEF5081E6A092400B4A91F /* PinCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DEF5071E6A092400B4A91F /* PinCustomCell.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +30,6 @@
 		3179ED28CEBE313F3E5F3BFD /* Pods-PintSizePinterestChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		6CD41978EF476B125C6803D7 /* Pods_PintSizePinterestChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PintSizePinterestChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42646CB1E687A44000AA861 /* PintSizePinterestChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PintSizePinterestChallenge.xcdatamodel; sourceTree = "<group>"; };
-		A42646CD1E6883D2000AA861 /* BoardFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardFeedTableViewCell.swift; sourceTree = "<group>"; };
 		A42646CF1E68B52D000AA861 /* PinDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailVC.swift; sourceTree = "<group>"; };
 		A4666D551E65DD520012B0D9 /* PintSizePinterestChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PintSizePinterestChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4666D581E65DD520012B0D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +45,6 @@
 		A4D9BA141E67088100AB7EB4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A4D9BA1A1E6738E200AB7EB4 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		A4D9BA1C1E67704700AB7EB4 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
-		A4D9BA1E1E67B0A700AB7EB4 /* BoardFeedTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardFeedTableVC.swift; sourceTree = "<group>"; };
 		A4D9BA221E67CA6000AB7EB4 /* PinterestUserDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestUserDataStore.swift; sourceTree = "<group>"; };
 		A4DEF5071E6A092400B4A91F /* PinCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCustomCell.swift; sourceTree = "<group>"; };
 		FB6FC7A1E3499457867515AC /* Pods-PintSizePinterestChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PintSizePinterestChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PintSizePinterestChallenge/Pods-PintSizePinterestChallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,8 +138,6 @@
 		A4D9BA111E6706FA00AB7EB4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				A4D9BA1E1E67B0A700AB7EB4 /* BoardFeedTableVC.swift */,
-				A42646CD1E6883D2000AA861 /* BoardFeedTableViewCell.swift */,
 				A4666D621E65DD520012B0D9 /* Assets.xcassets */,
 				A4666D671E65DD530012B0D9 /* Info.plist */,
 			);
@@ -294,8 +288,6 @@
 				A4666D701E65E0300012B0D9 /* Secrets.swift in Sources */,
 				A4D9BA1D1E67704700AB7EB4 /* BoardCollectionViewCell.swift in Sources */,
 				A4666D591E65DD520012B0D9 /* AppDelegate.swift in Sources */,
-				A42646CE1E6883D2000AA861 /* BoardFeedTableViewCell.swift in Sources */,
-				A4D9BA1F1E67B0A700AB7EB4 /* BoardFeedTableVC.swift in Sources */,
 				A4D9BA151E67088100AB7EB4 /* User.swift in Sources */,
 				A42646D01E68B52D000AA861 /* PinDetailVC.swift in Sources */,
 			);
