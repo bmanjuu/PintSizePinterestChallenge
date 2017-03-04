@@ -18,6 +18,32 @@ protocol PinterestCustomLayoutDelegate {
                         heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat
 }
 
+
+
+class PinterestCustomLayoutAttributes: UICollectionViewLayoutAttributes {
+
+    var photoHeight: CGFloat = 0.0
+    
+    override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = super.copy(with: zone) as! PinterestCustomLayoutAttributes
+        copy.photoHeight = photoHeight
+        return copy
+    }
+    
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        if let attributes = object as? PinterestCustomLayoutAttributes {
+            if( attributes.photoHeight == photoHeight  ) {
+                return super.isEqual(object)
+            }
+        }
+        return false
+    }
+    
+}
+
+
+
 class PinterestCustomLayout: UICollectionViewLayout {
     
     var delegate: PinterestCustomLayoutDelegate!
@@ -25,7 +51,7 @@ class PinterestCustomLayout: UICollectionViewLayout {
     var numberOfColumns = 2
     var cellPadding: CGFloat = 6.0
 
-    private var cache = [UICollectionViewLayoutAttributes]()
+    private var cache = [PinterestCustomLayoutAttributes]()
     
     private var contentHeight: CGFloat  = 0.0
     private var contentWidth: CGFloat {
@@ -59,14 +85,14 @@ class PinterestCustomLayout: UICollectionViewLayout {
                 let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 
-                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
+                let attributes = PinterestCustomLayoutAttributes(forCellWith: indexPath as IndexPath)
                 attributes.frame = insetFrame
                 cache.append(attributes)
                 
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffset[column] = yOffset[column] + height
                 
-                column = column >= (numberOfColumns - 1) ? 0 : +column
+                column = column >= (numberOfColumns - 1) ? 0 : column+1
             }
         }
     }
@@ -85,6 +111,10 @@ class PinterestCustomLayout: UICollectionViewLayout {
             }
         }
         return layoutAttributes
+    }
+    
+    override class var layoutAttributesClass: AnyClass {
+        return PinterestCustomLayoutAttributes.self
     }
 
 }

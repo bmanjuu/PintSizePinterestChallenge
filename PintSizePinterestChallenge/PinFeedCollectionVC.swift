@@ -23,6 +23,8 @@ class PinFeedCollectionVC: UICollectionViewController {
         if let layout = collectionView?.collectionViewLayout as? PinterestCustomLayout {
             layout.delegate = self
         }
+        
+        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
