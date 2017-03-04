@@ -183,6 +183,9 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-00-htO">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="CRk-at-cAz"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baa-Tn-aZ1">
                                             <rect key="frame" x="8" y="210" width="83" height="17"/>
@@ -213,12 +216,12 @@
                                     <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="Iox-MA-6Zs"/>
                                     <constraint firstAttribute="leadingMargin" secondItem="baa-Tn-aZ1" secondAttribute="leading" id="K1o-wH-Hes"/>
                                     <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="Nw7-a9-Z1z"/>
-                                    <constraint firstItem="baa-Tn-aZ1" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="10" id="XTr-ll-nHP"/>
                                     <constraint firstItem="UWQ-C0-NDD" firstAttribute="leading" secondItem="baa-Tn-aZ1" secondAttribute="leading" id="hF6-GS-gCT"/>
                                     <constraint firstItem="UWQ-C0-NDD" firstAttribute="bottom" secondItem="I3z-i4-ayj" secondAttribute="bottomMargin" id="mqL-F0-ZSQ"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="286"/>
                                 <connections>
+                                    <outlet property="pinImageHeightLayoutConstraint" destination="CRk-at-cAz" id="sPU-v1-vZ9"/>
                                     <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>
                                 </connections>
