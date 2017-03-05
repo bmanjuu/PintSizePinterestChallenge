@@ -89,7 +89,8 @@ class PinterestCustomLayout: UICollectionViewLayout {
                 let annotationHeight = delegate.collectionView(collectionView: collectionView!,
                                                                heightForAnnotationAtIndexPath: indexPath,
                                                                withWidth: width)
-                let height = cellPadding +  photoHeight + 70.0 + cellPadding
+                let height = cellPadding +  photoHeight + annotationHeight + cellPadding
+                
                 let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 

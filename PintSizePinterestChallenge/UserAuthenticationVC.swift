@@ -51,7 +51,7 @@ class UserAuthenticationVC: UIViewController {
             
             //once data has been retrieved, stop animation and make enter button fade in
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: { 
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                 loadingActivityIndicator.stopAnimating()
                 
                 UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
@@ -59,9 +59,6 @@ class UserAuthenticationVC: UIViewController {
                 }, completion: nil)
             })
             
-//            DispatchQueue.main.async {
-//                
-//            }
         }
         
         

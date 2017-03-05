@@ -47,6 +47,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BoardCollectionViewCell
         cell.backgroundColor = UIColor.clear
         cell.layer.borderWidth = 1.0

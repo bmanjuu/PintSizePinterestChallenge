@@ -25,17 +25,13 @@ class PinDetailVC: UIViewController {
     @IBAction func seePinButtonTapped(_ sender: Any) {
         
         if let pinAppURL = URL(string: "pinterest://pin/\(selectedPin.identifier)") {
-            
             UIApplication.shared.open(pinAppURL, options: [:]) { (viewPinInApp) in
                 print("viewing pin in app")
             }
-            
         } else {
-            
             UIApplication.shared.open(selectedPin.pinURL, options: [:]) { (openedPin) in
                 print("opening webpage to view pin")
             }
-            
         }
     }
     override func viewDidLoad() {
