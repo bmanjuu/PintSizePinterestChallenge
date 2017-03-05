@@ -63,6 +63,8 @@ class PinFeedCollectionVC: UICollectionViewController {
         let pin = self.selectedBoardPins[indexPath.row]
         cell.pinImageView.setImageWith(pin.largestImage().url)
         cell.descriptionText.text = pin.descriptionText
+       
+        cell.layer.cornerRadius = 6
         
         return cell
     }
