@@ -12,14 +12,9 @@ class PinCustomCell: UICollectionViewCell {
     
     @IBOutlet weak var pinImageView: UIImageView!
     @IBOutlet weak var pinImageHeightLayoutConstraint: NSLayoutConstraint!
-    // should i do something about the bottom constraint here?
-    @IBOutlet weak var descriptionLabelTopLayoutConstraint: NSLayoutConstraint!
-    
     
     @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
-    //height is intrinsically 50 
-    
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         super.apply(layoutAttributes)

@@ -11,9 +11,10 @@ import PinterestSDK
 
 class PinDetailVC: UIViewController {
     
+    let store = PinterestUserDataStore.sharedInstance
+    
     var selectedPin: PDKPin!
     var boardContainingPin: PDKBoard!
-    let store = PinterestUserDataStore.sharedInstance
 
     @IBOutlet weak var selectedPinImage: UIImageView!
     @IBOutlet weak var pinDescriptionLabel: UILabel!
