@@ -18,6 +18,7 @@ class PinCustomCell: UICollectionViewCell {
     
     @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
+    //height is intrinsically 50 
     
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
