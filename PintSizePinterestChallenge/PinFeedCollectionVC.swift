@@ -16,7 +16,7 @@ class PinFeedCollectionVC: UICollectionViewController {
     
     var selectedBoard: PDKBoard!
     var selectedBoardPins: [PDKPin]!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +63,6 @@ class PinFeedCollectionVC: UICollectionViewController {
         let pin = self.selectedBoardPins[indexPath.row]
         cell.pinImageView.setImageWith(pin.largestImage().url)
         cell.descriptionText.text = pin.descriptionText
-        // cell.contentView.frame = cell.contentView.bounds
         
         return cell
     }
@@ -85,14 +84,15 @@ extension PinFeedCollectionVC: PinterestCustomLayoutDelegate {
     func collectionView(collectionView: UICollectionView,
                         heightForAnnotationAtIndexPath indexPath: NSIndexPath,
                         withWidth width: CGFloat) -> CGFloat {
+        
         let annotationPadding = CGFloat(4)
         let annotationHeaderHeight = CGFloat(17)
         
         let pin = self.selectedBoardPins[indexPath.item]
         
-        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
-        let commentHeight = pin.heightForComment(font: font, width: width, pin: pin)
-        let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
+        let height = annotationPadding + annotationHeaderHeight + 60.0 + annotationPadding
+        // 60.0 is the height of the descriptionText label rounded up
+        
         return height
     }
 }

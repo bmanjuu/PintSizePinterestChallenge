@@ -187,12 +187,15 @@
                                                 <constraint firstAttribute="height" constant="200" id="CRk-at-cAz"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Text here" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-C0-NDD">
-                                            <rect key="frame" x="8" y="210" width="184" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-C0-NDD">
+                                            <rect key="frame" x="8" y="210" width="184" height="54"/>
                                             <color key="backgroundColor" red="1" green="0.3586290097" blue="0.59427309269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="184" id="4tw-oT-hf2"/>
                                             </constraints>
+                                            <string key="text">Text here
+testing
+placeholder text</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -208,7 +211,7 @@
                                 </constraints>
                                 <size key="customSize" width="200" height="286"/>
                                 <connections>
-                                    <outlet property="descriptionText" destination="UWQ-C0-NDD" id="gbl-q8-kUn"/>
+                                    <outlet property="descriptionText" destination="UWQ-C0-NDD" id="O95-U1-4WO"/>
                                     <outlet property="pinImageHeightLayoutConstraint" destination="CRk-at-cAz" id="sPU-v1-vZ9"/>
                                     <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>

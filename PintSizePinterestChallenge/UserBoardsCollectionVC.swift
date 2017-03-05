@@ -62,10 +62,12 @@ class UserBoardsCollectionVC: UICollectionViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let destination = segue.destination as! PinFeedCollectionVC
         let indexPath = collectionView!.indexPathsForSelectedItems!.first!
         let selectedBoard = Array(store.user.boardsAndPins.keys)[indexPath.row]
         print("SELECTED BOARD --> \(selectedBoard.name), pins: \(store.user.boardsAndPins[selectedBoard]!.count)")
+        
         destination.selectedBoardPins = store.user.boardsAndPins[selectedBoard]
         destination.selectedBoard = selectedBoard
     }

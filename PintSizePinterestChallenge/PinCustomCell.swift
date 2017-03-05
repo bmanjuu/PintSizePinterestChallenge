@@ -13,7 +13,6 @@ class PinCustomCell: UICollectionViewCell {
     @IBOutlet weak var pinImageView: UIImageView!
     @IBOutlet weak var pinImageHeightLayoutConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {

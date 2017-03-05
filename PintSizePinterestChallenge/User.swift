@@ -103,6 +103,7 @@ extension User {
     }
 }
 
+/*
 extension PDKPin {
     
     func heightForComment(font: UIFont, width: CGFloat, pin: PDKPin) -> CGFloat {
@@ -110,4 +111,4 @@ extension PDKPin {
         return ceil(rect.height)
     }
 
-}
+} */
