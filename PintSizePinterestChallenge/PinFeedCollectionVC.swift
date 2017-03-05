@@ -25,14 +25,6 @@ class PinFeedCollectionVC: UICollectionViewController {
         }
         
         collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,40 +58,11 @@ class PinFeedCollectionVC: UICollectionViewController {
     
         let pin = self.selectedBoardPins[indexPath.row]
         cell.pinImageView.setImageWith(pin.largestImage().url)
+        cell.descriptionText.text = pin.descriptionText
+        // cell.contentView.frame = cell.contentView.bounds
         
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
 
@@ -120,7 +83,9 @@ extension PinFeedCollectionVC: PinterestCustomLayoutDelegate {
                         withWidth width: CGFloat) -> CGFloat {
         let annotationPadding = CGFloat(4)
         let annotationHeaderHeight = CGFloat(17)
+        
         let pin = self.selectedBoardPins[indexPath.item]
+        
         let font = UIFont(name: "AvenirNext-Regular", size: 10)!
         let commentHeight = pin.heightForComment(font: font, width: width, pin: pin)
         let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding

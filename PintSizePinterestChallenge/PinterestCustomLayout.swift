@@ -15,7 +15,8 @@ protocol PinterestCustomLayoutDelegate {
     func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath, withWidth:CGFloat) -> CGFloat
     
     func collectionView(collectionView: UICollectionView,
-                        heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat
+                        heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat 
+    
 }
 
 
@@ -59,6 +60,10 @@ class PinterestCustomLayout: UICollectionViewLayout {
         return collectionView!.bounds.width - (insets.left + insets.right)
     }
     
+    override class var layoutAttributesClass: AnyClass {
+        return PinterestCustomLayoutAttributes.self
+    }
+    
     override func prepare() {
 
         if cache.isEmpty {
@@ -80,6 +85,7 @@ class PinterestCustomLayout: UICollectionViewLayout {
                 let photoHeight = delegate.collectionView(collectionView: collectionView!,
                                                           heightForPhotoAtIndexPath: indexPath,
                                                           withWidth:width)
+                
                 let annotationHeight = delegate.collectionView(collectionView: collectionView!,
                                                                heightForAnnotationAtIndexPath: indexPath,
                                                                withWidth: width)
@@ -101,10 +107,6 @@ class PinterestCustomLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
-    }
-    
-    override class var layoutAttributesClass: AnyClass {
-        return PinterestCustomLayoutAttributes.self
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

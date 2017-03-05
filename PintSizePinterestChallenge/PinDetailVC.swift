@@ -32,7 +32,7 @@ class PinDetailVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.selectedPinImage.image = ImageHelper.obtainImagefrom(link: selectedPin.largestImage().url)
+        self.selectedPinImage.setImageWith(selectedPin.largestImage().url)
         
         self.boardNameLabel.text = boardContainingPin.name
         self.pinDescriptionLabel.text = selectedPin.descriptionText
