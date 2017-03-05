@@ -89,6 +89,6 @@ extension PinFeedCollectionVC: PinterestCustomLayoutDelegate {
         let font = UIFont(name: "AvenirNext-Regular", size: 10)!
         let commentHeight = pin.heightForComment(font: font, width: width, pin: pin)
         let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
-        return 50.0
+        return height
     }
 }

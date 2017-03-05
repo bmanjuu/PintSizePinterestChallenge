@@ -175,7 +175,7 @@
                         <collectionViewLayout key="collectionViewLayout" id="ZEd-ek-Y0F" customClass="PinterestCustomLayout" customModule="PintSizePinterestChallenge" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pin" id="I3z-i4-ayj" customClass="PinCustomCell" customModule="PintSizePinterestChallenge" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="286"/>
+                                <rect key="frame" x="88" y="0.0" width="200" height="286"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="286"/>
@@ -187,38 +187,28 @@
                                                 <constraint firstAttribute="height" constant="200" id="CRk-at-cAz"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="baa-Tn-aZ1">
-                                            <rect key="frame" x="8" y="210" width="83" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Text here" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-C0-NDD">
-                                            <rect key="frame" x="8" y="229" width="184" height="49"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Text here" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-C0-NDD">
+                                            <rect key="frame" x="8" y="210" width="184" height="18"/>
+                                            <color key="backgroundColor" red="1" green="0.3586290097" blue="0.59427309269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="184" id="4tw-oT-hf2"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.85208847740000004" blue="0.85618023009999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Y0h-00-htO" firstAttribute="top" secondItem="I3z-i4-ayj" secondAttribute="top" id="58M-2f-NUW"/>
-                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="top" secondItem="baa-Tn-aZ1" secondAttribute="bottom" constant="1" id="IUj-iN-44n"/>
+                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="10" id="Di4-jP-c5V"/>
                                     <constraint firstAttribute="trailing" secondItem="Y0h-00-htO" secondAttribute="trailing" id="Iox-MA-6Zs"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="baa-Tn-aZ1" secondAttribute="leading" id="K1o-wH-Hes"/>
                                     <constraint firstItem="Y0h-00-htO" firstAttribute="leading" secondItem="I3z-i4-ayj" secondAttribute="leading" id="Nw7-a9-Z1z"/>
-                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="leading" secondItem="baa-Tn-aZ1" secondAttribute="leading" id="hF6-GS-gCT"/>
-                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="bottom" secondItem="I3z-i4-ayj" secondAttribute="bottomMargin" id="mqL-F0-ZSQ"/>
-                                    <constraint firstItem="baa-Tn-aZ1" firstAttribute="top" secondItem="Y0h-00-htO" secondAttribute="bottom" constant="10" id="nF2-yN-RMK"/>
+                                    <constraint firstItem="UWQ-C0-NDD" firstAttribute="centerX" secondItem="Y0h-00-htO" secondAttribute="centerX" id="s38-g7-5TD"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="286"/>
                                 <connections>
                                     <outlet property="descriptionText" destination="UWQ-C0-NDD" id="gbl-q8-kUn"/>
-                                    <outlet property="descriptionTitle" destination="baa-Tn-aZ1" id="fi9-2i-qHi"/>
                                     <outlet property="pinImageHeightLayoutConstraint" destination="CRk-at-cAz" id="sPU-v1-vZ9"/>
                                     <outlet property="pinImageView" destination="Y0h-00-htO" id="Mbd-RU-cOR"/>
                                     <segue destination="ev6-Pz-Ldd" kind="show" id="kQk-qP-ygY"/>
