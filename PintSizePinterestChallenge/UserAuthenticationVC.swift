@@ -23,6 +23,9 @@ class UserAuthenticationVC: UIViewController {
         super.viewDidLoad()
         self.activityIndicatorView.isHidden = true
         self.enterButton.alpha = 0.0
+        
+        self.loginButton.layer.cornerRadius = 6
+        self.enterButton.layer.cornerRadius = 6
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {

@@ -332,6 +332,7 @@ placeholder text</string>
                     <connections>
                         <outlet property="boardNameLabel" destination="2Iv-SG-IOk" id="iqY-j5-0Xw"/>
                         <outlet property="pinDescriptionLabel" destination="BuT-Va-kAe" id="JTI-vH-Gfq"/>
+                        <outlet property="seePinButton" destination="Fjc-1K-GUW" id="P8P-sn-Qyh"/>
                         <outlet property="selectedPinImage" destination="PAC-tR-A4j" id="Ix8-c8-tFd"/>
                         <outlet property="usernameLabel" destination="c1c-Z6-i9g" id="nOZ-AM-jim"/>
                     </connections>

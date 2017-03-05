@@ -20,6 +20,7 @@ class PinDetailVC: UIViewController {
     @IBOutlet weak var pinDescriptionLabel: UILabel!
     @IBOutlet weak var boardNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var seePinButton: UIButton!
     
     @IBAction func seePinButtonTapped(_ sender: Any) {
         UIApplication.shared.open(selectedPin.pinURL, options: [:]) { (openedPin) in
@@ -33,6 +34,9 @@ class PinDetailVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.seePinButton.layer.cornerRadius = 6
+        
+        self.selectedPinImage.layer.cornerRadius = 6
         self.selectedPinImage.setImageWith(selectedPin.largestImage().url)
         
         self.boardNameLabel.text = boardContainingPin.name

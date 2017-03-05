@@ -51,6 +51,7 @@ class UserBoardsCollectionVC: UICollectionViewController {
         cell.backgroundColor = UIColor.clear
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = UIColor.red.cgColor
+        cell.layer.cornerRadius = 6
         
         let board = Array(store.user.boardsAndPins.keys)[indexPath.row]
         
@@ -67,7 +68,6 @@ class UserBoardsCollectionVC: UICollectionViewController {
         let indexPath = collectionView!.indexPathsForSelectedItems!.first!
         let selectedBoard = Array(store.user.boardsAndPins.keys)[indexPath.row]
         print("SELECTED BOARD --> \(selectedBoard.name), pins: \(store.user.boardsAndPins[selectedBoard]!.count)")
-        
         destination.selectedBoardPins = store.user.boardsAndPins[selectedBoard]
         destination.selectedBoard = selectedBoard
     }

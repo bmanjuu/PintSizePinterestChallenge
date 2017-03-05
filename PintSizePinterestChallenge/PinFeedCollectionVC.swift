@@ -92,8 +92,8 @@ extension PinFeedCollectionVC: PinterestCustomLayoutDelegate {
         
         let pin = self.selectedBoardPins[indexPath.item]
         
-        let height = annotationPadding + annotationHeaderHeight + 60.0 + annotationPadding
-        // 60.0 is the height of the descriptionText label rounded up
+        let height = annotationPadding + annotationHeaderHeight + 70.0 + annotationPadding
+        // 70.0 = 60.0 is the height of the descriptionText label rounded up + 10.0 for extra space 
         
         return height
     }
