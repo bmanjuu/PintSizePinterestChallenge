@@ -1,7 +1,7 @@
 # PintSizePinterestChallenge
 A simplified version of the Pinterest app! 
 
-<img src="https://github.com/bmanjuu/PintSizePinterestChallenge/blob/master/WelcomeScreen.png" width="200">   <img src="https://github.com/bmanjuu/PintSizePinterestChallenge/blob/master/BoardScreen.png" width="200">   <img src="https://github.com/bmanjuu/PintSizePinterestChallenge/blob/master/DetailPinView.png" width="200">
+<img src="https://github.com/bmanjuu/PintSizePinterestChallenge/blob/improvingFlowWithPins/PintSizePinterestChallenge/Assets.xcassets/HomeScreen.imageset/HomeScreen.png" width="200">   <img src="https://github.com/bmanjuu/PintSizePinterestChallenge/blob/improvingFlowWithPins/PintSizePinterestChallenge/Assets.xcassets/BoardFeed.imageset/BoardFeed.png" width="200">   <img src="https://github.com/bmanjuu/PintSizePinterestChallenge/blob/improvingFlowWithPins/PintSizePinterestChallenge/Assets.xcassets/PinFeed.imageset/PinFeed.png" width="200"> <img src="https://github.com/bmanjuu/PintSizePinterestChallenge/blob/improvingFlowWithPins/PintSizePinterestChallenge/Assets.xcassets/PinDetail.imageset/PinDetail.png" width="200">
 
 ## Requirements
 This is an iOS app that requires iOS 10.2+ to run. 
